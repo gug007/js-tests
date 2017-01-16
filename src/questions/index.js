@@ -15,8 +15,7 @@ const list = [{
     {answer: '15'},
     {answer: 'Error'}
   ]
-},
-{
+}, {
   tags: ['es5'],
   title: 'What will the code below output to the console?',
   code: `
@@ -24,9 +23,14 @@ const list = [{
       var a = b = 3;
     })();
 
-    console.log(a, b);
+    console.log(typeof a, typeof b);
   `,
-  answers: [{answer: 'Error', isTrue: true},{answer: '3\n 3'},{answer: 'undefined\n 3'},{answer: '3\n undefined'}]
+  answers: [
+    {answer: 'undefined\n number', isTrue: true},
+    {answer: 'number\n number'},
+    {answer: 'number\n undefined'},
+    {answer: 'undefined\n undefined'}
+  ]
 }];
 
 module.exports = list;
