@@ -24,14 +24,13 @@ const list = [{
       var a = b = 3;
     })();
 
-    console.log('a defined? ' + (typeof a !== 'undefined'));
-    console.log('b defined? ' + (typeof b !== 'undefined'));
+    console.log(a, b);
   `,
   answers: [
-    {answer: 'false\n true', isTrue: true},
-    {answer: 'true\n false'},
-    {answer: 'true\n true'},
-    {answer: 'false\n false'}
+    {answer: 'Error', isTrue: true},
+    {answer: '3\n 3'},
+    {answer: 'undefined\n 3'},
+    {answer: '3\n undefined'}
   ]
 }];
 
