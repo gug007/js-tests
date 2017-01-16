@@ -26,12 +26,7 @@ const list = [{
 
     console.log(a, b);
   `,
-  answers: [
-    {answer: 'Error', isTrue: true},
-    {answer: '3\n 3'},
-    {answer: 'undefined\n 3'},
-    {answer: '3\n undefined'}
-  ]
+  answers: [{answer: 'Error', isTrue: true},{answer: '3\n 3'},{answer: 'undefined\n 3'},{answer: '3\n undefined'}]
 }];
 
 module.exports = list;
