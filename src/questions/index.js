@@ -175,6 +175,25 @@ const list = [{
     {answer: 'undefined\n undefined'},
     {answer: '"James Bond"\n undefined'}];
   ]
-}]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var a = {},
+        b = {key: 'b'},
+        c = {key: 'c'};
+
+    a[b] = 7;
+    a[c] = 13;
+
+    console.log(a[b]);
+  `,
+  answers: [
+    {answer: 13, isTrue: true},
+    {answer: undefined},
+    {answer: 7},
+    {answer: 'Error'}
+  ]
+}];
 
 module.exports = list;
