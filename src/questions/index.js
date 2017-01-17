@@ -31,6 +31,23 @@ const list = [{
     {answer: 'number\n undefined'},
     {answer: 'undefined\n undefined'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'In what order will the numbers 1-4 be logged to the console when the code below is executed?',
+  code: `
+    (function() {
+      console.log(1);
+      setTimeout(function() {console.log(2)}, 1000);
+      setTimeout(function() {console.log(3)}, 0);
+      console.log(4);
+    }());
+  `,
+  answers: [
+    {answer: '1\n 4\n 3\n 2', isTrue: true},
+    {answer: '1\n 2\n 3\n 4'},
+    {answer: '1\n 3\n 4\n 2'},
+    {answer: '1\n 4\n 2\n 3'}
+  ]
 }];
 
 module.exports = list;
