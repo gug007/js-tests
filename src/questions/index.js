@@ -15,6 +15,22 @@ const list = [{
     {answer: '15'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the code below output to the console?',
+  code: `
+    (function() {
+      var a = b = 3;
+    })();
+
+    console.log(typeof a, typeof b);
+  `,
+  answers: [
+    {answer: 'undefined\n number', isTrue: true},
+    {answer: 'number\n number'},
+    {answer: 'number\n undefined'},
+    {answer: 'undefined\n undefined'}
+  ]
 }];
 
 module.exports = list;
