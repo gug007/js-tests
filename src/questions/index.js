@@ -1,6 +1,6 @@
 /**
-  @tags [es5, es6, typescript, ect.]
-*/
+ @tags [es5, es6, typescript, ect.]
+ */
 
 const list = [{
   tags: ['es5'],
@@ -141,7 +141,7 @@ const list = [{
     {answer: '5\n 32\n 2\n 4'},
     {answer: '"122"\n "122"\n "112"\n "112"'},
     {answer: '"32"\n "32"\n "02"\n "112"'}
- ]
+  ]
 }, {
   tags: ['es5'],
   title: 'What will be the output of the following code?',
@@ -173,7 +173,7 @@ const list = [{
     {answer: 'undefined\n "James Bond"', isTrue: true},
     {answer: '"James Bond"\n "James Bond"'},
     {answer: 'undefined\n undefined'},
-    {answer: '"James Bond"\n undefined'}];
+    {answer: '"James Bond"\n undefined'}
   ]
 }, {
   tags: ['es5'],
@@ -208,7 +208,7 @@ const list = [{
     {answer: '0\n 2\n 1\n 1'},
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
- ]
+  ]
 }];
 
 module.exports = list;
