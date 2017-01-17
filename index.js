@@ -1,8 +1,8 @@
 const fs = require('fs');
 const q = require('./src/questions');
 
-const readme = q.reduce((p, val) => {
-  p+=val.title + '\n';
+const readme = q.reduce((p, val, index) => {
+  p+=`${index+1}. ${val.title}\n`;
   if(val.code) {
     p+=`\`\`\`javascript ${val.code} \`\`\` \n`;
   }
