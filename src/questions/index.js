@@ -142,6 +142,20 @@ const list = [{
     {answer: '"122"\n "122"\n "112"\n "112"'},
     {answer: '"32"\n "32"\n "02"\n "112"'}
  ]
+}, {
+  tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    for(var i = 0; i < 5; i++) {
+      setTimeout(function() { console.log(i); }, i * 1000);
+    }
+  `,
+  answers: [
+    {answer: '5\n 5\n 5\n 5\n 5', isTrue: true},
+    {answer: '0\n 1\n 2\n 3\n 4'},
+    {answer: '0\n 5\n 5\n 5\n 5'},
+    {answer: '4\n 3\n 2\n 1\n 0'}
+  ]
 }];
 
 module.exports = list;
