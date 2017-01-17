@@ -31,6 +31,21 @@ const list = [{
     {answer: 'number\n undefined'},
     {answer: 'undefined\n undefined'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the code below output to the console?',
+  code: `
+    console.log(1 + '2' + '2');
+    console.log(1 + +'2' + '2');
+    console.log(1 + -'1' + '2');
+    console.log(+'1' + '1' + '2');
+  `,
+  answers: [
+    {answer: '"122"\n "32"\n "02"\n "112"', isTrue: true},
+    {answer: '5\n 32\n 2\n 4'},
+    {answer: '"122"\n "122"\n "112"\n "112"'},
+    {answer: '"32"\n "32"\n "02"\n "112"'}
+  ]
 }];
 
 module.exports = list;
