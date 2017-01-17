@@ -53,6 +53,31 @@ const list = [{
     {answer: 'bar\n undefined'},
     {answer: 'undefined\n undefined'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the code below output to the console?',
+  code: `
+    function foo1() {
+      return {
+        bar: 'hello'
+      };
+    }
+
+    function foo2() {
+      return
+      {
+        bar: 'hello'
+      };
+    }
+    
+    console.log(foo1(), foo2());
+  `,
+  answers: [
+    {answer: 'Object {bar: "hello"}\n undefined', isTrue: true},
+    {answer: 'Object {bar: "hello"}\n Object {bar: "hello"}'},
+    {answer: 'undefined\n Object {bar: "hello"}'},
+    {answer: 'undefined\n undefined'}
+  ]
 }];
 
 module.exports = list;
