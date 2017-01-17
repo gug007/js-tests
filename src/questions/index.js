@@ -35,6 +35,53 @@ const list = [{
   tags: ['es5'],
   title: 'What will the code below output to the console?',
   code: `
+    var myObject = {
+      foo: 'bar',
+      func: function() {
+        var self = this;
+        (function() {
+          console.log(this.foo, self.foo);
+        }());
+      }
+    };
+
+    myObject.func();
+  `,
+  answers: [
+    {answer: 'undefined\n bar', isTrue: true},
+    {answer: 'bar\n bar'},
+    {answer: 'bar\n undefined'},
+    {answer: 'undefined\n undefined'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the code below output to the console?',
+  code: `
+    function foo1() {
+      return {
+        bar: 'hello'
+      };
+    }
+
+    function foo2() {
+      return
+      {
+        bar: 'hello'
+      };
+    }
+    
+    console.log(foo1(), foo2());
+  `,
+  answers: [
+    {answer: 'Object {bar: "hello"}\n undefined', isTrue: true},
+    {answer: 'Object {bar: "hello"}\n Object {bar: "hello"}'},
+    {answer: 'undefined\n Object {bar: "hello"}'},
+    {answer: 'undefined\n undefined'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the code below output to the console?',
+  code: `
     console.log(typeof NaN === 'number');
     console.log(NaN === NaN);
     console.log('abc' / 3);
