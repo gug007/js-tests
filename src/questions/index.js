@@ -78,6 +78,21 @@ const list = [{
     {answer: 'undefined\n Object {bar: "hello"}'},
     {answer: 'undefined\n undefined'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the code below output to the console?',
+  code: `
+    console.log(typeof NaN === 'number');
+    console.log(NaN === NaN);
+    console.log('abc' / 3);
+    console.log('A' - 'B' + '2');
+  `,
+  answers: [
+    {answer: 'true\n false\n NaN\n "NaN2"', isTrue: true},
+    {answer: 'false\n true\n NaN\n NaN'},
+    {answer: 'true\n true\n 1\n NaN'},
+    {answer: 'false\n false\n NaN\n "NaN2"'}
+  ]
 }];
 
 module.exports = list;
