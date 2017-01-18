@@ -211,6 +211,154 @@ const list = [{
   ]
 }, {
   tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    var b = {a: 13};
+    
+    (function foo(b) {
+      b = {a: 7};
+    })(b);
+
+    console.log(b);
+  `,
+  answers: [
+    {answer: 'Object {a: 13}', isTrue: true},
+    {answer: 'Object {b: 7}'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    var a = 7;
+    var b = {a: 7};
+
+    (function foo(a, b) {
+      a = 13;
+      b.a = 13;
+    })(a, b);
+
+    console.log(a, b);
+  `,
+  answers: [
+    {answer: '7\n Object {a: 13}', isTrue: true},
+    {answer: '13\n Object {a: 13}'},
+    {answer: '7\n Object {a: 7}'},
+    {answer: '13\n Object {a: 7}'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function test() {
+      console.log(a, foo());
+
+      var a = 7;
+      function foo() {
+        return 13;
+      }
+    }
+
+    test();
+  `,
+  answers: [
+    {answer: 'undefined\n 13', isTrue: true},
+    {answer: '7\n 13'},
+    {answer: 'undefined\n undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(typeof null);
+    console.log(typeof {});
+    console.log(typeof []);
+    console.log(typeof undefined);
+  `,
+  answers: [
+    {answer: '"object"\n"object"\n"object"\n"undefined"', isTrue: true},
+    {answer: '"object"\n"object"\n"array"\n"undefined"'},
+    {answer: '"null"\n"object"\n"object"\n"undefined"'},
+    {answer: '"object"\n"object"\n"object"\n"string"'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function Person(name) {
+      this.name = name;
+    }
+
+    Person.prototype.printName = () => {
+      console.log(this.name);
+    }
+
+    let person = new Person('Mike');
+    person.printName();
+  `,
+  answers: [
+    {answer: undefined, isTrue: true},
+    {answer: 'Error'},
+    {answer: 'Mike'},
+    {answer: null}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+  var person = {
+    age: 27,
+  
+    printAge: function() {
+      console.log(this.age);
+    }
+  }
+
+  setTimeout(person.printAge, 1000);
+  `,
+  answers: [
+    {answer: undefined, isTrue: true},
+    {answer: 27},
+    {answer: null},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var arr = [77, 13, 33, 15, 7, 3];
+    arr.sort();
+
+    console.log(arr);
+  `,
+  answers: [
+    {answer: '[13, 15, 3, 33, 7, 77]', isTrue: true},
+    {answer: '[3, 7, 13, 15, 33, 77]'},
+    {answer: '[77, 33, 15, 13, 7, 3]'},
+    {answer: '[77, 13, 33, 15, 7, 3]'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. What will be printed on the console if a user clicks the first and the fourth button in the list?',
+  code: `
+    var nodes = document.getElementsByTagName('button');
+    
+    for(var i = 0; i < nodes.length; i++) {
+      nodes[i].addEventListener('click', function() {
+        console.log('You clicked element #' + i);
+      });
+    }
+  `,
+  answers: [
+    {answer: '4\n4', isTrue: true},
+    {answer: '0\n3'},
+    {answer: 'undefined\nundefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
   title: 'How many data types are there in JS-ES5?',
   code: ``,
   answers: [
