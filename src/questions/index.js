@@ -209,6 +209,27 @@ const list = [{
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function Person(name) {
+      this.name = name;
+    }
+
+    Person.prototype.printName = () => {
+      console.log(this.name);
+    }
+
+    let person = new Person('Mike');
+    person.printName();
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: undefined},
+    {answer: 'Mike'},
+    {answer: null}
+  ]
 }];
 
 module.exports = list;
