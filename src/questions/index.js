@@ -26,10 +26,10 @@ const list = [{
     console.log(typeof a, typeof b);
   `,
   answers: [
-    {answer: 'undefined\n number', isTrue: true},
-    {answer: 'number\n number'},
-    {answer: 'number\n undefined'},
-    {answer: 'undefined\n undefined'}
+    {answer: 'undefined\nnumber', isTrue: true},
+    {answer: 'number\nnumber'},
+    {answer: 'number\nundefined'},
+    {answer: 'undefined\nundefined'}
   ]
 }, {
   tags: ['es5'],
@@ -48,10 +48,10 @@ const list = [{
     myObject.func();
   `,
   answers: [
-    {answer: 'undefined\n bar', isTrue: true},
-    {answer: 'bar\n bar'},
-    {answer: 'bar\n undefined'},
-    {answer: 'undefined\n undefined'}
+    {answer: 'undefined\nbar', isTrue: true},
+    {answer: 'bar\nbar'},
+    {answer: 'bar\nundefined'},
+    {answer: 'undefined\nundefined'}
   ]
 }, {
   tags: ['es5'],
@@ -73,10 +73,10 @@ const list = [{
     console.log(foo1(), foo2());
   `,
   answers: [
-    {answer: 'Object {bar: "hello"}\n undefined', isTrue: true},
-    {answer: 'Object {bar: "hello"}\n Object {bar: "hello"}'},
-    {answer: 'undefined\n Object {bar: "hello"}'},
-    {answer: 'undefined\n undefined'}
+    {answer: 'Object {bar: "hello"}\nundefined', isTrue: true},
+    {answer: 'Object {bar: "hello"}\nObject {bar: "hello"}'},
+    {answer: 'undefined\nObject {bar: "hello"}'},
+    {answer: 'undefined\nundefined'}
   ]
 }, {
   tags: ['es5'],
@@ -88,10 +88,10 @@ const list = [{
     console.log('A' - 'B' + '2');
   `,
   answers: [
-    {answer: 'true\n false\n NaN\n "NaN2"', isTrue: true},
-    {answer: 'false\n true\n NaN\n NaN'},
-    {answer: 'true\n true\n 1\n NaN'},
-    {answer: 'false\n false\n NaN\n "NaN2"'}
+    {answer: 'true\nfalse\nNaN\n"NaN2"', isTrue: true},
+    {answer: 'false\ntrue\nNaN\nNaN'},
+    {answer: 'true\ntrue\n1\nNaN'},
+    {answer: 'false\nfalse\nNaN\n"NaN2"'}
   ]
 }, {
   tags: ['es5'],
@@ -105,10 +105,10 @@ const list = [{
     }());
   `,
   answers: [
-    {answer: '1\n 4\n 3\n 2', isTrue: true},
-    {answer: '1\n 2\n 3\n 4'},
-    {answer: '1\n 3\n 4\n 2'},
-    {answer: '1\n 4\n 2\n 3'}
+    {answer: '1\n4\n3\n2', isTrue: true},
+    {answer: '1\n2\n3\n4'},
+    {answer: '1\n3\n4\n2'},
+    {answer: '1\n4\n2\n3'}
   ]
 }, {
   tags: ['es5'],
@@ -122,10 +122,10 @@ const list = [{
     console.log(arr1.slice(-1), arr2.slice(-1));
   `,
   answers: [
-    {answer: '[["j","o","n","e","s"]]\n [["j","o","n","e","s"]]', isTrue: true},
-    {answer: '["s"]\n ["s"]'},
-    {answer: '["j"]\n [["j","o","n","e","s"]]'},
-    {answer: '["j"]\n ["s"]'}
+    {answer: '[["j","o","n","e","s"]]\n[["j","o","n","e","s"]]', isTrue: true},
+    {answer: '["s"]\n["s"]'},
+    {answer: '["j"]\n[["j","o","n","e","s"]]'},
+    {answer: '["j"]\n["s"]'}
   ]
 }, {
   tags: ['es5'],
@@ -137,10 +137,10 @@ const list = [{
     console.log(+'1' + '1' + '2');
   `,
   answers: [
-    {answer: '"122"\n "32"\n "02"\n "112"', isTrue: true},
-    {answer: '5\n 32\n 2\n 4'},
-    {answer: '"122"\n "122"\n "112"\n "112"'},
-    {answer: '"32"\n "32"\n "02"\n "112"'}
+    {answer: '"122"\n"32"\n"02"\n"112"', isTrue: true},
+    {answer: '5\n32\n2\n4'},
+    {answer: '"122"\n"122"\n"112"\n"112"'},
+    {answer: '"32"\n"32"\n"02"\n"112"'}
   ]
 }, {
   tags: ['es5'],
@@ -151,10 +151,10 @@ const list = [{
     }
   `,
   answers: [
-    {answer: '5\n 5\n 5\n 5\n 5', isTrue: true},
-    {answer: '0\n 1\n 2\n 3\n 4'},
-    {answer: '0\n 5\n 5\n 5\n 5'},
-    {answer: '4\n 3\n 2\n 1\n 0'}
+    {answer: '5\n5\n5\n5\n5', isTrue: true},
+    {answer: '0\n1\n2\n3\n4'},
+    {answer: '0\n5\n5\n5\n5'},
+    {answer: '4\n3\n2\n1\n0'}
   ]
 }, {
   tags: ['es5'],
@@ -170,10 +170,10 @@ const list = [{
     console.log(stoleSecretName(), spy.getSecretName());
   `,
   answers: [
-    {answer: 'undefined\n "James Bond"', isTrue: true},
-    {answer: '"James Bond"\n "James Bond"'},
-    {answer: 'undefined\n undefined'},
-    {answer: '"James Bond"\n undefined'}
+    {answer: 'undefined\n"James Bond"', isTrue: true},
+    {answer: '"James Bond"\n"James Bond"'},
+    {answer: 'undefined\nundefined'},
+    {answer: '"James Bond"\nundefined'}
   ]
 }, {
   tags: ['es5'],
@@ -204,10 +204,10 @@ const list = [{
     console.log(1 && 2);
   `,
   answers: [
-    {answer: '1\n 1\n 0\n 2', isTrue: true},
-    {answer: '0\n 2\n 1\n 1'},
-    {answer: '1\n 1\n 0\n true'},
-    {answer: '1\n 2\n true\n 1'}
+    {answer: '1\n1\n0\n2', isTrue: true},
+    {answer: '0\n2\n1\n1'},
+    {answer: '1\n1\n0\ntrue'},
+    {answer: '1\n2\ntrue\n1'}
   ]
 }, {
   tags: ['es5'],
