@@ -209,6 +209,27 @@ const list = [{
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function test() {
+      console.log(a, foo());
+
+      var a = 7;
+      function foo() {
+        return 13;
+      }
+    }
+
+    test();
+  `,
+  answers: [
+    {answer: 'undefined\n 13', isTrue: true},
+    {answer: '7\n 13'},
+    {answer: 'undefined\n undefined'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
