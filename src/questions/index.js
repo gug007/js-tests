@@ -225,8 +225,8 @@ const list = [{
     person.printName();
   `,
   answers: [
-    {answer: 'Error', isTrue: true},
-    {answer: undefined},
+    {answer: undefined, isTrue: true},
+    {answer: 'Error'},
     {answer: 'Mike'},
     {answer: null}
   ]
