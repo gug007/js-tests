@@ -195,3 +195,4 @@
     }
    ``` 
 21) How many data types are there in JS-ES5?
+
