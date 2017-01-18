@@ -283,6 +283,27 @@ const list = [{
     {answer: '"null"\n"object"\n"object"\n"undefined"'},
     {answer: '"object"\n"object"\n"object"\n"string"'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function Person(name) {
+      this.name = name;
+    }
+
+    Person.prototype.printName = () => {
+      console.log(this.name);
+    }
+
+    let person = new Person('Mike');
+    person.printName();
+  `,
+  answers: [
+    {answer: undefined, isTrue: true},
+    {answer: 'Error'},
+    {answer: 'Mike'},
+    {answer: null}
+  ]
 }];
 
 module.exports = list;
