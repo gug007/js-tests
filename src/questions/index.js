@@ -209,6 +209,16 @@ const list = [{
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'How many data types are there in JS-ES5?',
+  code: ``,
+  answers: [
+    {answer: 7, isTrue: true},
+    {answer: 6},
+    {answer: 5},
+    {answer: 10},
+  ]
 }];
 
 module.exports = list;
