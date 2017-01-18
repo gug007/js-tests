@@ -209,6 +209,26 @@ const list = [{
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+  var person = {
+    age: 27,
+  
+    printAge: function() {
+      console.log(this.age);
+    }
+  }
+
+  setTimeout(person.printAge, 1000);
+  `,
+  answers: [
+    {answer: undefined, isTrue: true},
+    {answer: 27},
+    {answer: null},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
