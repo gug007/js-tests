@@ -209,6 +209,21 @@ const list = [{
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(typeof null);
+    console.log(typeof {});
+    console.log(typeof []);
+    console.log(typeof undefined);
+  `,
+  answers: [
+    {answer: '"object"\n "object"\n "object"\n "undefined"', isTrue: true},
+    {answer: '"object"\n "object"\n "array"\n "undefined"'},
+    {answer: '"null"\n "object"\n "object"\n "undefined"'},
+    {answer: '"object"\n "object"\n "object"\n "string"'}
+  ]
 }];
 
 module.exports = list;
