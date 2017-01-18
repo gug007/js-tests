@@ -210,6 +210,80 @@ const list = [{
     {answer: '1\n 2\n true\n 1'}
   ]
 }, {
+  tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    var b = {a: 13};
+    
+    (function foo(b) {
+      b = {a: 7};
+    })(b);
+
+    console.log(b);
+  `,
+  answers: [
+    {answer: 'Object {a: 13}', isTrue: true},
+    {answer: 'Object {b: 7}'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    var a = 7;
+    var b = {a: 7};
+
+    (function foo(a, b) {
+      a = 13;
+      b.a = 13;
+    })(a, b);
+
+    console.log(a, b);
+  `,
+  answers: [
+    {answer: '7\n Object {a: 13}', isTrue: true},
+    {answer: '13\n Object {a: 13}'},
+    {answer: '7\n Object {a: 7}'},
+    {answer: '13\n Object {a: 7}'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function test() {
+      console.log(a, foo());
+
+      var a = 7;
+      function foo() {
+        return 13;
+      }
+    }
+
+    test();
+  `,
+  answers: [
+    {answer: 'undefined\n 13', isTrue: true},
+    {answer: '7\n 13'},
+    {answer: 'undefined\n undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(typeof null);
+    console.log(typeof {});
+    console.log(typeof []);
+    console.log(typeof undefined);
+  `,
+  answers: [
+    {answer: '"object"\n"object"\n"object"\n"undefined"', isTrue: true},
+    {answer: '"object"\n"object"\n"array"\n"undefined"'},
+    {answer: '"null"\n"object"\n"object"\n"undefined"'},
+    {answer: '"object"\n"object"\n"object"\n"string"'}
+  ]
+}, {
   tags: ['es6'],
   title: 'What will the following code output to the console?',
   code: `
