@@ -222,9 +222,9 @@ const list = [{
     }
   `,
   answers: [
-    {answer: '4\n 4', isTrue: true},
-    {answer: '0\n 3'},
-    {answer: 'undefined\n undefined'},
+    {answer: '4\n4', isTrue: true},
+    {answer: '0\n3'},
+    {answer: 'undefined\nundefined'},
     {answer: 'Error'}
   ]
 }];
