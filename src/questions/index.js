@@ -357,6 +357,16 @@ const list = [{
     {answer: 'undefined\nundefined'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'How many data types are there in JS-ES5?',
+  code: ``,
+  answers: [
+    {answer: 6, isTrue: true},
+    {answer: 7},
+    {answer: 5},
+    {answer: 10},
+  ]
 }];
 
 module.exports = list;
