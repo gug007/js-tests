@@ -211,6 +211,44 @@ const list = [{
   ]
 }, {
   tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    var b = {a: 13};
+    
+    (function foo(b) {
+      b = {a: 7};
+    })(b);
+
+    console.log(b);
+  `,
+  answers: [
+    {answer: 'Object {a: 13}', isTrue: true},
+    {answer: 'Object {b: 7}'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
+    var a = 7;
+    var b = {a: 7};
+
+    (function foo(a, b) {
+      a = 13;
+      b.a = 13;
+    })(a, b);
+
+    console.log(a, b);
+  `,
+  answers: [
+    {answer: '7\n Object {a: 13}', isTrue: true},
+    {answer: '13\n Object {a: 13}'},
+    {answer: '7\n Object {a: 7}'},
+    {answer: '13\n Object {a: 7}'}
+  ]
+}, {
+  tags: ['es5'],
   title: 'What will the following code output to the console?',
   code: `
     function test() {
