@@ -219,10 +219,10 @@ const list = [{
     console.log(typeof undefined);
   `,
   answers: [
-    {answer: '"object"\n "object"\n "object"\n "undefined"', isTrue: true},
-    {answer: '"object"\n "object"\n "array"\n "undefined"'},
-    {answer: '"null"\n "object"\n "object"\n "undefined"'},
-    {answer: '"object"\n "object"\n "object"\n "string"'}
+    {answer: '"object"\n"object"\n"object"\n"undefined"', isTrue: true},
+    {answer: '"object"\n"object"\n"array"\n"undefined"'},
+    {answer: '"null"\n"object"\n"object"\n"undefined"'},
+    {answer: '"object"\n"object"\n"object"\n"string"'}
   ]
 }];
 
