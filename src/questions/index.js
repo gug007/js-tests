@@ -213,6 +213,24 @@ const list = [{
   tags: ['es5'],
   title: 'What will be the output of the following code?',
   code: `
+    var b = {a: 13};
+    
+    (function foo(b) {
+      b = {a: 7};
+    })(b);
+
+    console.log(b);
+  `,
+  answers: [
+    {answer: 'Object {a: 13}', isTrue: true},
+    {answer: 'Object {b: 7}'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will be the output of the following code?',
+  code: `
     var a = 7;
     var b = {a: 7};
 
