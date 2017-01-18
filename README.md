@@ -110,3 +110,89 @@
     console.log(0 && 1);
     console.log(1 && 2);
    ``` 
+13) What will be the output of the following code?
+```javascript 
+    var b = {a: 13};
+    
+    (function foo(b) {
+      b = {a: 7};
+    })(b);
+
+    console.log(b);
+   ``` 
+14) What will be the output of the following code?
+```javascript 
+    var a = 7;
+    var b = {a: 7};
+
+    (function foo(a, b) {
+      a = 13;
+      b.a = 13;
+    })(a, b);
+
+    console.log(a, b);
+   ``` 
+15) What will the following code output to the console?
+```javascript 
+    function test() {
+      console.log(a, foo());
+
+      var a = 7;
+      function foo() {
+        return 13;
+      }
+    }
+
+    test();
+   ``` 
+16) What will the following code output to the console?
+```javascript 
+    console.log(typeof null);
+    console.log(typeof {});
+    console.log(typeof []);
+    console.log(typeof undefined);
+   ``` 
+17) What will the following code output to the console?
+```javascript 
+    function Person(name) {
+      this.name = name;
+    }
+
+    Person.prototype.printName = () => {
+      console.log(this.name);
+    }
+
+    let person = new Person('Mike');
+    person.printName();
+   ``` 
+18) What will the following code output to the console?
+```javascript 
+  var person = {
+    age: 27,
+  
+    printAge: function() {
+      console.log(this.age);
+    }
+  }
+
+  setTimeout(person.printAge, 1000);
+   ``` 
+19) What will the following code output to the console?
+```javascript 
+    var arr = [77, 13, 33, 15, 7, 3];
+    arr.sort();
+
+    console.log(arr);
+   ``` 
+20) Consider the following code. What will be printed on the console if a user clicks the first and the fourth button in the list?
+```javascript 
+    var nodes = document.getElementsByTagName('button');
+    
+    for(var i = 0; i < nodes.length; i++) {
+      nodes[i].addEventListener('click', function() {
+        console.log('You clicked element #' + i);
+      });
+    }
+   ``` 
+21) How many data types are there in JS-ES5?
+
