@@ -214,8 +214,8 @@ const list = [{
   title: 'How many data types are there in JS-ES5?',
   code: ``,
   answers: [
-    {answer: 7, isTrue: true},
-    {answer: 6},
+    {answer: 6, isTrue: true},
+    {answer: 7},
     {answer: 5},
     {answer: 10},
   ]
