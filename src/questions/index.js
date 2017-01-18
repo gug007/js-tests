@@ -209,6 +209,24 @@ const list = [{
     {answer: '1\n 1\n 0\n true'},
     {answer: '1\n 2\n true\n 1'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. What will be printed on the console if a user clicks the first and the fourth button in the list?',
+  code: `
+    var nodes = document.getElementsByTagName('button');
+    
+    for(var i = 0; i < nodes.length; i++) {
+      nodes[i].addEventListener('click', function() {
+        console.log('You clicked element #' + i);
+      });
+    }
+  `,
+  answers: [
+    {answer: '4\n 4', isTrue: true},
+    {answer: '0\n 3'},
+    {answer: 'undefined\n undefined'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
