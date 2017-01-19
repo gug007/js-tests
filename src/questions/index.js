@@ -519,6 +519,32 @@ const list = [{
     {answer: '7, 3, 7, 2, 77'},
     {answer: '7, 3, Error'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const person = {
+      name: 'Mike',
+      age: 27,
+  
+      printName: function() {
+        console.log(this.name);
+      },
+  
+      printAge: () => {
+        console.log(this.age);
+      }
+    };
+
+    person.printName();
+    person.printAge();
+  `,
+  answers: [
+    {answer: 'Mike, undefined', isTrue: true},
+    {answer: 'Mike, 27'},
+    {answer: 'undefined, undefined'},
+    {answer: 'Mike, Error'}
+  ]
 }];
 
 module.exports = list;
