@@ -367,6 +367,28 @@ const list = [{
     {answer: 5},
     {answer: 10},
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    function add(first, second = first) {
+      return first + second;
+    }
+
+    console.log(add(1));
+
+    function multiply(first = second, second) {
+      return first * second;
+    }
+
+    console.log(multiply(undefined, 1));
+  `,
+  answers: [
+    {answer: '2, Error', isTrue: true},
+    {answer: '2, 0'},
+    {answer: 'Error, Error'},
+    {answer: 'Error, 0'}
+  ]
 }];
 
 module.exports = list;
