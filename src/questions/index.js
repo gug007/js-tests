@@ -406,6 +406,30 @@ const list = [{
     {answer: '"undefined", "undefined"'},
     {answer: 'Error, Error'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'Consider the following code. What will be printed on the console?',
+  code: `
+    const funcs = [];
+
+    for (var i = 0; i < 2; i++) {
+      funcs.push(() => console.log(i));
+    }
+
+    const start = i;
+
+    for (let i = start; i < 6; i++) {
+      funcs.push(() => console.log(i));
+    }
+
+    funcs.forEach((func) => func());
+  `,
+  answers: [
+    {answer: '2, 2, 2, 3, 4, 5', isTrue: true},
+    {answer: '2, 2, 2, 2, 2, 2'},
+    {answer: '0, 1, 2, 3, 4, 5'},
+    {answer: '5, 4, 3, 2, 2, 2'}
+  ]
 }];
 
 module.exports = list;
