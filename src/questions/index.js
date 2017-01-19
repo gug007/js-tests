@@ -390,6 +390,22 @@ const list = [{
     {answer: 27},
     {answer: undefined}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(typeof foo);
+    console.log(typeof bar);
+    
+    var foo = 7;
+    let bar = 13;
+  `,
+  answers: [
+    {answer: '"undefined", Error', isTrue: true},
+    {answer: '"number", "number"'},
+    {answer: '"undefined", "undefined"'},
+    {answer: 'Error, Error'}
+  ]
 }];
 
 module.exports = list;
