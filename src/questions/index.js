@@ -26,10 +26,10 @@ const list = [{
     console.log(typeof a, typeof b);
   `,
   answers: [
-    {answer: 'undefined, number', isTrue: true},
-    {answer: 'number, number'},
-    {answer: 'number, undefined'},
-    {answer: 'undefined, undefined'}
+    {answer: '"undefined", "number"', isTrue: true},
+    {answer: '"number", "number"'},
+    {answer: '"number", "undefined"'},
+    {answer: '"undefined", "undefined"'}
   ]
 }, {
   tags: ['es5'],
@@ -366,6 +366,88 @@ const list = [{
     {answer: 7},
     {answer: 5},
     {answer: 10},
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const person = {
+      age: 27
+    }
+
+    function editAge(age) {
+      person = {
+        age: age
+      };
+    }
+
+    editAge(30);
+    console.log(person.age);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 30},
+    {answer: 27},
+    {answer: undefined}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(typeof foo);
+    console.log(typeof bar);
+    
+    var foo = 7;
+    let bar = 13;
+  `,
+  answers: [
+    {answer: '"undefined", Error', isTrue: true},
+    {answer: '"number", "number"'},
+    {answer: '"undefined", "undefined"'},
+    {answer: 'Error, Error'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'Consider the following code. What will be printed on the console?',
+  code: `
+    const funcs = [];
+
+    for (var i = 0; i < 2; i++) {
+      funcs.push(() => console.log(i));
+    }
+
+    const start = i;
+
+    for (let i = start; i < 6; i++) {
+      funcs.push(() => console.log(i));
+    }
+
+    funcs.forEach((func) => func());
+  `,
+  answers: [
+    {answer: '2, 2, 2, 3, 4, 5', isTrue: true},
+    {answer: '2, 2, 2, 2, 2, 2'},
+    {answer: '0, 1, 2, 3, 4, 5'},
+    {answer: '5, 4, 3, 2, 2, 2'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var date = "Hello!";
+    console.log(typeof window.Date);
+    
+    var Date = function() {
+      return date;
+    };
+    
+    console.log(typeof Date());
+  `,
+  answers: [
+    {answer: '"function", "string"', isTrue: true},
+    {answer: '"function", "function"'},
+    {answer: '"string", "string"'},
+    {answer: '"string", "function"'}
   ]
 }, {
   tags: ['es6'],
