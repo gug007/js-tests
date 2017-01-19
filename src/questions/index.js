@@ -449,6 +449,32 @@ const list = [{
     {answer: '"string", "string"'},
     {answer: '"string", "function"'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'Consider the following code. What will be printed on the console?',
+  code: `
+    function mixArgs(first, second = "b") {
+      console.log(first === arguments[0]);
+      first = "c";
+      console.log(first === arguments[0]);
+    }
+
+    mixArgs("a");
+
+    function args(first) {
+      console.log(first === arguments[0]);
+      first = "c";
+      console.log(first === arguments[0]);
+    }
+
+    args("a");
+  `,
+  answers: [
+    {answer: 'true, false, true, true', isTrue: true},
+    {answer: 'true, true, true, true'},
+    {answer: 'true, true, true, false'},
+    {answer: 'true, false, true, false'}
+  ]
 }];
 
 module.exports = list;
