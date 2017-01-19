@@ -26,10 +26,10 @@ const list = [{
     console.log(typeof a, typeof b);
   `,
   answers: [
-    {answer: 'undefined, number', isTrue: true},
-    {answer: 'number, number'},
-    {answer: 'number, undefined'},
-    {answer: 'undefined, undefined'}
+    {answer: '"undefined", "number"', isTrue: true},
+    {answer: '"number", "number"'},
+    {answer: '"number", "undefined"'},
+    {answer: '"undefined", "undefined"'}
   ]
 }, {
   tags: ['es5'],
@@ -366,6 +366,29 @@ const list = [{
     {answer: 7},
     {answer: 5},
     {answer: 10},
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const person = {
+      age: 27
+    }
+
+    function editAge(age) {
+      person = {
+        age: age
+      };
+    }
+
+    editAge(30);
+    console.log(person.age);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 30},
+    {answer: 27},
+    {answer: undefined}
   ]
 }, {
   tags: ['es6'],
