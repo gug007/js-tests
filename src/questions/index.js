@@ -497,6 +497,28 @@ const list = [{
     {answer: 'Error, Error'},
     {answer: 'Error, 0'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    let foo = (a, ...rest) => {
+      console.log(a, rest.length);
+    }
+
+    foo(7, 13, 33, 77);
+
+    let bar = (a, ...rest, b) => {
+      console.log(a, rest.length, b);
+    }
+
+    bar(7, 13, 33, 77);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: '7, 3, 7, 3, undefined'},
+    {answer: '7, 3, 7, 2, 77'},
+    {answer: '7, 3, Error'}
+  ]
 }];
 
 module.exports = list;
