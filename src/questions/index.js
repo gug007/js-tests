@@ -430,6 +430,25 @@ const list = [{
     {answer: '0, 1, 2, 3, 4, 5'},
     {answer: '5, 4, 3, 2, 2, 2'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var date = "Hello!";
+    console.log(typeof window.Date);
+    
+    var Date = function() {
+      return date;
+    };
+    
+    console.log(typeof Date());
+  `,
+  answers: [
+    {answer: '"function", "string"', isTrue: true},
+    {answer: '"function", "function"'},
+    {answer: '"string", "string"'},
+    {answer: '"string", "function"'}
+  ]
 }];
 
 module.exports = list;
