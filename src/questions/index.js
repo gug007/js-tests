@@ -545,6 +545,32 @@ const list = [{
     {answer: 'undefined, undefined'},
     {answer: 'Mike, Error'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'Consider the following code. Which function(s) is/are optimized?',
+  code: `
+    function factorial_1(n, p = 1) {
+      if (n <= 1) {
+        return 1 * p;
+      } else {
+        return factorial_1(n - 1, n * p);
+      }
+    }
+
+    function factorial_2(n) {
+      if(n <= 1) {
+        return 1;
+      } else {
+        return n * factorial_2(n - 1);
+      }
+    }
+  `,
+  answers: [
+    {answer: 'First (factorial_1)', isTrue: true},
+    {answer: 'Second (factorial_2)'},
+    {answer: 'Both'},
+    {answer: 'Neither'}
+  ]
 }];
 
 module.exports = list;
