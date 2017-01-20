@@ -545,6 +545,20 @@ const list = [{
     {answer: 'undefined, undefined'},
     {answer: 'Mike, Error'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'Consider the following code. Which function(s) is/are curried?',
+  code: `
+    const multiply = (x) => x * 2;
+    const add = (x) => (y) => x + y;
+    const divide = (x) => (y) => y * y;
+  `,
+  answers: [
+    {answer: 'Second (add)', isTrue: true},
+    {answer: 'First (multiply)'},
+    {answer: 'Second, Third (multiply, add)'},
+    {answer: 'Third (divide)'}
+  ]
 }];
 
 module.exports = list;
