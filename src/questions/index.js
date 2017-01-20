@@ -546,6 +546,132 @@ const list = [{
     {answer: 'Mike, Error'}
   ]
 }, {
+  tags: ['es5'],
+  title: `
+    Which statement(s) is/are true?
+
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  `,
+  code: ``,
+  answers: [
+    {answer: '3, 4', isTrue: true},
+    {answer: '1'},
+    {answer: '1, 5'},
+    {answer: '2'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. Which function(s) is/are higher-order?',
+  code: `
+    function add(x, y) {
+      return x + y;
+    }
+
+    function bind(func, context) {
+      return function() {
+        func.apply(context, arguments);
+      }
+    }
+
+    setTimeout(function() {console.log('Hello there!');}, 1000);
+  `,
+  answers: [
+    {answer: 'Second, Third (bind, setTimeout)', isTrue: true},
+    {answer: 'All three (add, bind, setTimeout)'},
+    {answer: 'First, Third (add, setTimeout)'},
+    {answer: 'Neither'}
+  ]
+}, {
+  tags: ['es5'],
+  title: `
+    Which statement(s) is/are true?
+
+    1. Higher-order functions are usual functions.
+    2. Higher-order functions either take functions as parameters, return functions or both.
+    3. Higher-order functions either take objects as parameters, return objects or both.
+    4. Higher-order function is just an another term of usual function.
+  `,
+  code: ``,
+  answers: [
+    {answer: '2', isTrue: true},
+    {answer: '1, 4'},
+    {answer: '3'},
+    {answer: 'Neither'}  
+  ]
+}, {
+  tags: ['es5'],
+  title: `
+    Which statement is true?
+
+    1. A curried function is a function that takes any number of parameters.
+    2. A curried function is a function that only takes a single parameter at a time.
+    3. A curried function is a function that does not take any parameters.
+    4. A curried function is a function that only takes two parameters at a time.
+  `,
+  code: ``,
+  answers: [
+    {answer: '2', isTrue: true},
+    {answer: '1'},
+    {answer: '3'},
+    {answer: '4'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. Which function(s) is/are pure?',
+  code: `
+    var x = 7;
+
+    function add(y) {
+      return x + y;
+    }
+
+    var z = 3;
+
+    function multiply(x, y) {
+      return x * y;
+    }
+
+    function divide() {
+      x = x / 2;
+    }
+  `,
+  answers: [
+    {answer: 'Second (multiply)', isTrue: true},
+    {answer: 'First (add)'},
+    {answer: 'Third (divide), '},
+    {answer: 'Neither'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. Which function(s) is/are pure?',
+  code: `
+    var x = 7;
+
+    function add(y) {
+      return x + y;
+    }
+
+    var z = 3;
+
+    function multiply(x, y) {
+      return x * y;
+    }
+
+    function divide() {
+      x = x / 2;
+    }
+  `,
+  answers: [
+    {answer: 'Second (multiply)', isTrue: true},
+    {answer: 'First (add)'},
+    {answer: 'Third (divide), '},
+    {answer: 'Neither'}
+  ]
+}, {
   tags: ['es6'],
   title: 'Consider the following code. Which function(s) is/are optimized?',
   code: `
