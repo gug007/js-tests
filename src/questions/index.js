@@ -545,7 +545,8 @@ const list = [{
     {answer: 'undefined, undefined'},
     {answer: 'Mike, Error'}
   ]
-}
+}, {
+  tags: ['es5'],
   title: `
     Which statement(s) is/are true?
 
@@ -583,6 +584,23 @@ const list = [{
     {answer: 'All three (add, bind, setTimeout)'},
     {answer: 'First, Third (add, setTimeout)'},
     {answer: 'Neither'}
+  ]
+}, {
+  tags: ['es5'],
+  title: `
+    Which statement(s) is/are true?
+
+    1. Higher-order functions are usual functions.
+    2. Higher-order functions either take functions as parameters, return functions or both.
+    3. Higher-order functions either take objects as parameters, return objects or both.
+    4. Higher-order function is just an another term of usual function.
+  `,
+  code: ``,
+  answers: [
+    {answer: '2', isTrue: true},
+    {answer: '1, 4'},
+    {answer: '3'},
+    {answer: 'Neither'}  
   ]
 }];
 
