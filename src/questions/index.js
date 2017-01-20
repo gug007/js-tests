@@ -545,6 +545,32 @@ const list = [{
     {answer: 'undefined, undefined'},
     {answer: 'Mike, Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. Which function(s) is/are pure?',
+  code: `
+    var x = 7;
+
+    function add(y) {
+      return x + y;
+    }
+
+    var z = 3;
+
+    function multiply(x, y) {
+      return x * y;
+    }
+
+    function divide() {
+      x = x / 2;
+    }
+  `,
+  answers: [
+    {answer: 'Second (multiply)', isTrue: true},
+    {answer: 'First (add)'},
+    {answer: 'Third (divide), '},
+    {answer: 'Neither'}
+  ]
 }];
 
 module.exports = list;
