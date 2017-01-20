@@ -602,6 +602,23 @@ const list = [{
     {answer: '3'},
     {answer: 'Neither'}  
   ]
+}, {
+  tags: ['es5'],
+  title: `
+    Which statement is true?
+
+    1. A curried function is a function that takes any number of parameters.
+    2. A curried function is a function that only takes a single parameter at a time.
+    3. A curried function is a function that does not take any parameters.
+    4. A curried function is a function that only takes two parameters at a time.
+  `,
+  code: ``,
+  answers: [
+    {answer: '2', isTrue: true},
+    {answer: '1'},
+    {answer: '3'},
+    {answer: '4'}
+  ]
 }];
 
 module.exports = list;
