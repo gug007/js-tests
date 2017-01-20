@@ -545,6 +545,23 @@ const list = [{
     {answer: 'undefined, undefined'},
     {answer: 'Mike, Error'}
   ]
+}
+  title: `
+    Which statement(s) is/are true?
+
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  `,
+  code: ``,
+  answers: [
+    {answer: '3, 4', isTrue: true},
+    {answer: '1'},
+    {answer: '1, 5'},
+    {answer: '2'}
+  ]
 }, {
   tags: ['es5'],
   title: 'Consider the following code. Which function(s) is/are higher-order?',
