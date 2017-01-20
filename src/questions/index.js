@@ -545,6 +545,28 @@ const list = [{
     {answer: 'undefined, undefined'},
     {answer: 'Mike, Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'Consider the following code. Which function(s) is/are higher-order?',
+  code: `
+    function add(x, y) {
+      return x + y;
+    }
+
+    function bind(func, context) {
+      return function() {
+        func.apply(context, arguments);
+      }
+    }
+
+    setTimeout(function() {console.log('Hello there!');}, 1000);
+  `,
+  answers: [
+    {answer: 'Second, Third (bind, setTimeout)', isTrue: true},
+    {answer: 'All three (add, bind, setTimeout)'},
+    {answer: 'First, Third (add, setTimeout)'},
+    {answer: 'Neither'}
+  ]
 }];
 
 module.exports = list;
