@@ -713,7 +713,7 @@ const list = [{
   ]
 }, {
   tags: ['es6'],
-  title: 'What will the following code output to the console?',
+  title: 'What will be the output of the following code?',
   code: `
     (function(x, f = () => x) {
       var x;
