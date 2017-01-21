@@ -712,7 +712,7 @@ const list = [{
     {answer: 'Third (divide)'}
   ]
 }, {
-  tags: ['es5'],
+  tags: ['es6'],
   title: 'What will the following code output to the console?',
   code: `
     (function(x, f = () => x) {
