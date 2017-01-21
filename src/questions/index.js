@@ -711,6 +711,21 @@ const list = [{
     {answer: 'Second, Third (multiply, add)'},
     {answer: 'Third (divide)'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const person = (name) => {name: name}
+
+    const p = person('Mike');
+    console.log(p.name);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'Mike'},
+    {answer: 'undefined'},
+    {answer: 'null'}
+  ]
 }];
 
 module.exports = list;
