@@ -408,3 +408,12 @@
     const add = (x) => (y) => x + y;
     const divide = (x) => (y) => y * y;
    ``` 
+38) What will be the output of the following code?
+```javascript 
+    (function(x, f = () => x) {
+      var x;
+      var y = x;
+      x = 2;
+      return [x, y, f()];
+    })(1)
+   ``` 
