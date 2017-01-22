@@ -309,3 +309,133 @@
     person.printName();
     person.printAge();
    ``` 
+30) 
+    Which statement(s) is/are true?
+
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  
+31) Consider the following code. Which function(s) is/are higher-order?
+```javascript 
+    function add(x, y) {
+      return x + y;
+    }
+
+    function bind(func, context) {
+      return function() {
+        func.apply(context, arguments);
+      }
+    }
+
+    setTimeout(function() {console.log('Hello there!');}, 1000);
+   ``` 
+32) 
+    Which statement(s) is/are true?
+
+    1. Higher-order functions are usual functions.
+    2. Higher-order functions either take functions as parameters, return functions or both.
+    3. Higher-order functions either take objects as parameters, return objects or both.
+    4. Higher-order function is just an another term of usual function.
+  
+33) 
+    Which statement is true?
+
+    1. A curried function is a function that takes any number of parameters.
+    2. A curried function is a function that only takes a single parameter at a time.
+    3. A curried function is a function that does not take any parameters.
+    4. A curried function is a function that only takes two parameters at a time.
+  
+34) Consider the following code. Which function(s) is/are pure?
+```javascript 
+    var x = 7;
+
+    function add(y) {
+      return x + y;
+    }
+
+    var z = 3;
+
+    function multiply(x, y) {
+      return x * y;
+    }
+
+    function divide() {
+      x = x / 2;
+    }
+   ``` 
+35) Consider the following code. Which function(s) is/are pure?
+```javascript 
+    var x = 7;
+
+    function add(y) {
+      return x + y;
+    }
+
+    var z = 3;
+
+    function multiply(x, y) {
+      return x * y;
+    }
+
+    function divide() {
+      x = x / 2;
+    }
+   ``` 
+36) Consider the following code. Which function(s) is/are optimized?
+```javascript 
+    function factorial_1(n, p = 1) {
+      if (n <= 1) {
+        return 1 * p;
+      } else {
+        return factorial_1(n - 1, n * p);
+      }
+    }
+
+    function factorial_2(n) {
+      if(n <= 1) {
+        return 1;
+      } else {
+        return n * factorial_2(n - 1);
+      }
+    }
+   ``` 
+37) Consider the following code. Which function(s) is/are curried?
+```javascript 
+    const multiply = (x) => x * 2;
+    const add = (x) => (y) => x + y;
+    const divide = (x) => (y) => y * y;
+   ``` 
+38) What will the following code output to the console?
+```javascript 
+    const person = {
+      name: 'Mike',
+      age: 30
+    };
+
+    let name = 'Oleg';
+    let age = 27;
+
+    {name, age} = person;
+
+    console.log(name, age);
+   ``` 
+39) What will the code below output to the console?
+```javascript 
+    function printPerson({name = 'Mike', age = 27}) {
+      console.log(name, age);
+    }
+
+    printPerson();
+   ``` 
+40) What will the following code return?
+```javascript 
+    (function(x, f = () => x) {
+      var x;
+      var y = x;
+      x = 2;
+      return [x, y, f()];
+    })(1)
+   ``` 

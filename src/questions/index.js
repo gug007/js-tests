@@ -715,6 +715,61 @@ const list = [{
   tags: ['es6'],
   title: 'What will the following code output to the console?',
   code: `
+    const person = {
+      name: 'Mike',
+      age: 30
+    };
+
+    let name = 'Oleg';
+    let age = 27;
+
+    {name, age} = person;
+
+    console.log(name, age);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'Mike, 30'},
+    {answer: 'Oleg, 27'},
+    {answer: 'undefined, undefined'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the code below output to the console?',
+  code: `
+    function printPerson({name = 'Mike', age = 27}) {
+      console.log(name, age);
+    }
+
+    printPerson();
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'Mike, 27'},
+    {answer: 'undefined, undefined'},
+    {answer: 'null, null'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code return?',
+  code: `
+    (function(x, f = () => x) {
+      var x;
+      var y = x;
+      x = 2;
+      return [x, y, f()];
+    })(1)
+  `,
+  answers: [
+    {answer: '[2, 1, 1]', isTrue: true},
+    {answer: '[1, 1, 1]'},
+    {answer: '[2, undefined, 1]'},
+    {answer: '[2, 1, undefined]'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
     const person = (name) => {name: name}
 
     const p = person('Mike');
