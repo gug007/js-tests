@@ -439,3 +439,10 @@
       return [x, y, f()];
     })(1)
    ``` 
+41) What will the following code output to the console?
+```javascript 
+    const person = (name) => {name: name}
+
+    const p = person('Mike');
+    console.log(p.name);
+   ``` 
