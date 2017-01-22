@@ -431,23 +431,21 @@ const list = [{
     {answer: '5, 4, 3, 2, 2, 2'}
   ]
 }, {
-  tags: ['es5'],
+  tags: ['es6'],
   title: 'What will the following code output to the console?',
   code: `
-    var date = "Hello!";
+    let RegExp = '7';
+    console.log(typeof window.RegExp);
+    var Date = '13';    
     console.log(typeof window.Date);
-    
-    var Date = function() {
-      return date;
-    };
-    
-    console.log(typeof Date());
+    const Array = '77';
+    console.log(typeof window.Array);
   `,
   answers: [
-    {answer: '"function", "string"', isTrue: true},
-    {answer: '"function", "function"'},
-    {answer: '"string", "string"'},
-    {answer: '"string", "function"'}
+    {answer: '"function", "string", "function"', isTrue: true},
+    {answer: '"function", "function", "function"'},
+    {answer: '"string", "string", "string"'},
+    {answer: '"string", "function", "string"'}
   ]
 }, {
   tags: ['es6'],
