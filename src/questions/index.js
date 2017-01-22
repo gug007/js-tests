@@ -781,6 +781,23 @@ const list = [{
     {answer: 'undefined'},
     {answer: 'null'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code return?',
+  code: `
+    (function() {
+      if(false) {
+        let f = { g() => 1 };
+      }
+      return typeof f;
+    })()
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'function'},
+    {answer: 'object'}
+  ]
 }];
 
 module.exports = list;
