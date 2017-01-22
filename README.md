@@ -476,3 +476,12 @@
       return typeof f;
     })()
    ``` 
+46) What will the following code return?
+```javascript 
+    (function() {
+      return [
+        (() => this.x).bind({ x: 'inner' })(),
+        (() => this.x)()
+      ]
+    }).call({ x: 'outer' });
+   ``` 
