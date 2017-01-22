@@ -808,6 +808,24 @@ const list = [{
     {answer: 'function'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code return?',
+  code: `
+    (function() {
+      let f = this ? class g { } : class h { };
+      return [
+        typeof f,
+        typeof h
+      ];
+    })();
+  `,
+  answers: [
+    {answer: '["function", "undefined"]', isTrue: true},
+    {answer: '["object", "undefined"]'},
+    {answer: '["undefined", "object"]'},
+    {answer: '["undefined", "function"]'}
+  ]
 }];
 
 module.exports = list;
