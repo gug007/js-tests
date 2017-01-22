@@ -713,6 +713,22 @@ const list = [{
   ]
 }, {
   tags: ['es6'],
+  title: 'What will the code below output to the console?',
+  code: `
+    function printPerson({name = 'Mike', age = 27}) {
+      console.log(name, age);
+    }
+
+    printPerson();
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'Mike, 27'},
+    {answer: 'undefined, undefined'},
+    {answer: 'null, null'}
+  ]
+}, {
+  tags: ['es6'],
   title: 'What will be the output of the following code?',
   code: `
     (function(x, f = () => x) {
@@ -725,7 +741,7 @@ const list = [{
   answers: [
     {answer: '[2, 1, 1]', isTrue: true},
     {answer: '[1, 1, 1,]'},
-    {answer: '[undefined, undefined, 1], '},
+    {answer: '[2, undefined, 1], '},
     {answer: '[undefined, 2, undefined]'}
   ]
 }];
