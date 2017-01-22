@@ -826,6 +826,40 @@ const list = [{
     {answer: '["undefined", "object"]'},
     {answer: '["undefined", "function"]'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code return?',
+  code: `
+    (function() {
+      if(false) {
+        let f = { g() => 1 };
+      }
+      return typeof f;
+    })()
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'function'},
+    {answer: 'object'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code return?',
+  code: `
+    (function() {
+      return [
+        (() => this.x).bind({ x: 'inner' })(),
+        (() => this.x)()
+      ]
+    }).call({ x: 'outer' });
+  `,
+  answers: [
+    {answer: '["outer", "outer"]', isTrue: true},
+    {answer: '["inner", "outer"'},
+    {answer: '[undefined, "outer"]'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
