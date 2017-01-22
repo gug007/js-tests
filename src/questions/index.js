@@ -713,6 +713,28 @@ const list = [{
   ]
 }, {
   tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const person = {
+      name: 'Mike',
+      age: 30
+    };
+
+    let name = 'Oleg';
+    let age = 27;
+
+    {name, age} = person;
+
+    console.log(name, age);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'Mike, 30'},
+    {answer: 'Oleg, 27'},
+    {answer: 'undefined, undefined'}
+  ]
+}, {
+  tags: ['es6'],
   title: 'What will the code below output to the console?',
   code: `
     function printPerson({name = 'Mike', age = 27}) {
@@ -729,7 +751,7 @@ const list = [{
   ]
 }, {
   tags: ['es6'],
-  title: 'What will be the output of the following code?',
+  title: 'What will the following code return?',
   code: `
     (function(x, f = () => x) {
       var x;
@@ -740,9 +762,24 @@ const list = [{
   `,
   answers: [
     {answer: '[2, 1, 1]', isTrue: true},
-    {answer: '[1, 1, 1,]'},
-    {answer: '[2, undefined, 1], '},
-    {answer: '[undefined, 2, undefined]'}
+    {answer: '[1, 1, 1]'},
+    {answer: '[2, undefined, 1]'},
+    {answer: '[2, 1, undefined]'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const person = (name) => {name: name}
+
+    const p = person('Mike');
+    console.log(p.name);
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'Mike'},
+    {answer: 'undefined'},
+    {answer: 'null'}
   ]
 }];
 

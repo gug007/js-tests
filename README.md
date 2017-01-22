@@ -408,7 +408,29 @@
     const add = (x) => (y) => x + y;
     const divide = (x) => (y) => y * y;
    ``` 
-38) What will be the output of the following code?
+38) What will the following code output to the console?
+```javascript 
+    const person = {
+      name: 'Mike',
+      age: 30
+    };
+
+    let name = 'Oleg';
+    let age = 27;
+
+    {name, age} = person;
+
+    console.log(name, age);
+   ``` 
+39) What will the code below output to the console?
+```javascript 
+    function printPerson({name = 'Mike', age = 27}) {
+      console.log(name, age);
+    }
+
+    printPerson();
+   ``` 
+40) What will the following code return?
 ```javascript 
     (function(x, f = () => x) {
       var x;
@@ -416,4 +438,11 @@
       x = 2;
       return [x, y, f()];
     })(1)
+   ``` 
+41) What will the following code output to the console?
+```javascript 
+    const person = (name) => {name: name}
+
+    const p = person('Mike');
+    console.log(p.name);
    ``` 
