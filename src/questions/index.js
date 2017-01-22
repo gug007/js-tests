@@ -843,6 +843,23 @@ const list = [{
     {answer: 'function'},
     {answer: 'object'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code return?',
+  code: `
+    (function() {
+      return [
+        (() => this.x).bind({ x: 'inner' })(),
+        (() => this.x)()
+      ]
+    }).call({ x: 'outer' });
+  `,
+  answers: [
+    {answer: '["outer", "outer"]', isTrue: true},
+    {answer: '["inner", "outer"'},
+    {answer: '[undefined, "outer"]'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
