@@ -450,4 +450,29 @@
     for (let { x = 2, y } of [{ x: 1 }, 2, { y }]) { 
       arr.push(x, y);
     }
+
+    console.log(arr);
+   ``` 
+43) What will the following code output to the console?
+```javascript 
+    console.log(typeof `[object Object]`.prototype);
+   ``` 
+44) What will the following code return?
+```javascript 
+    (function() {
+      let f = this ? class g { } : class h { };
+      return [
+        typeof f,
+        typeof h
+      ];
+    })();
+   ``` 
+45) What will the following code return?
+```javascript 
+    (function() {
+      if(false) {
+        let f = { g() => 1 };
+      }
+      return typeof f;
+    })()
    ``` 
