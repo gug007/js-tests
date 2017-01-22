@@ -781,6 +781,21 @@ const list = [{
     {answer: 'undefined'},
     {answer: 'null'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    let arr = [];
+    for (let { x = 2, y } of [{ x: 1 }, 2, { y }]) { 
+      arr.push(x, y);
+    }
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: '[{x: 1}, 2, { y }, undefined]'},
+    {answer: '[1, undefined, 2, undefined, 2, undefined]'},
+    {answer: '[1, undefined, undefined, undefined, 2, undefined]'}
+  ]
 }];
 
 module.exports = list;
