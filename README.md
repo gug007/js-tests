@@ -236,14 +236,12 @@
    ``` 
 25) What will the following code output to the console?
 ```javascript 
-    var date = "Hello!";
+    let RegExp = '7';
+    console.log(typeof window.RegExp);
+    var Date = '13';    
     console.log(typeof window.Date);
-    
-    var Date = function() {
-      return date;
-    };
-    
-    console.log(typeof Date());
+    const Array = '77';
+    console.log(typeof window.Array);
    ``` 
 26) Consider the following code. What will be printed on the console?
 ```javascript 
@@ -445,4 +443,36 @@
 
     const p = person('Mike');
     console.log(p.name);
+   ``` 
+42) What will the following code output to the console?
+```javascript 
+    let arr = [];
+    for (let { x = 2, y } of [{ x: 1 }, 2, { y }]) { 
+      arr.push(x, y);
+    }
+
+    console.log(arr);
+   ``` 
+43) What will the following code output to the console?
+```javascript 
+    console.log(typeof `[object Object]`.prototype);
+   ``` 
+44) What will the following code return?
+```javascript 
+    (function() {
+      let f = this ? class g { } : class h { };
+      return [
+        typeof f,
+        typeof h
+      ];
+    })();
+   ``` 
+45) What will the following code return?
+```javascript 
+    (function() {
+      if(false) {
+        let f = { g() => 1 };
+      }
+      return typeof f;
+    })()
    ``` 
