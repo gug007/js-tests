@@ -781,6 +781,18 @@ const list = [{
     {answer: 'undefined'},
     {answer: 'null'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(typeof \`${{Object}}\`.prototype);
+  `,
+  answers: [
+    {answer: 'undefined', isTrue: true},
+    {answer: 'object'},
+    {answer: 'function'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
