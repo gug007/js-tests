@@ -928,6 +928,24 @@ const list = [{
     {answer: '2'},
     {answer: '1, 3'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var y = 1;
+
+    if(function f() { }) {
+      y += typeof f;
+    }
+
+    console.log(y);
+  `,
+  answers: [
+    {answer: '1undefined', isTrue: true},
+    {answer: '1'},
+    {answer: '1function'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
