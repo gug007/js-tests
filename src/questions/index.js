@@ -874,6 +874,24 @@ const list = [{
     {answer: 'number'},
     {answer: 'undefined'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `  
+    var salary = "1000$";
+
+    (function () {
+      console.log(salary);
+      var salary = "5000$";
+      console.log(salary);
+    })();
+  `,
+  answers: [
+    {answer: 'undefined, 5000$', isTrue: true},
+    {answer: '1000$, 5000$'},
+    {answer: '5000$, 5000$'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
