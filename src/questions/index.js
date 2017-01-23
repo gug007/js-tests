@@ -862,6 +862,58 @@ const list = [{
   ]
 }, {
   tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var Person = {
+      name: 'Jack'
+    }
+
+    var person = Object.create(Person);
+
+    delete person.name;
+
+    console.log(person.name);
+  `,
+  answers: [
+    {answer: 'Jack', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'null'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var foo = function bar() { return 12; };
+
+    console.log(typeof bar()); 
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'function'},
+    {answer: 'number'},
+    {answer: 'undefined'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `  
+    var salary = "1000$";
+
+    (function () {
+      console.log(salary);
+      var salary = "5000$";
+      console.log(salary);
+    })();
+  `,
+  answers: [
+    {answer: 'undefined, 5000$', isTrue: true},
+    {answer: '1000$, 5000$'},
+    {answer: '5000$, 5000$'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
   title: `
     Which statement(s) is/are true?
 
