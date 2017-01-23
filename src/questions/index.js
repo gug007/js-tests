@@ -912,6 +912,22 @@ const list = [{
     {answer: '5000$, 5000$'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: `
+    Which statement(s) is/are true?
+
+    1. The closure has access to variables declared in their own scope.
+    2. The closure has access to variables declared in a parent function scope.
+    3. The closure has access to variables declared in the global namespace.
+  `,
+  code: ``,
+  answers: [
+    {answer: '1, 2, 3', isTrue: true},
+    {answer: '1, 2'},
+    {answer: '2'},
+    {answer: '1, 3'}
+  ]
 }];
 
 module.exports = list;
