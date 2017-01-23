@@ -860,6 +860,26 @@ const list = [{
     {answer: '[undefined, "outer"]'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var Person = {
+      name: 'Jack'
+    }
+
+    var person = Object.create(Person);
+
+    delete person.name;
+
+    console.log(person.name);
+  `,
+  answers: [
+    {answer: 'Jack', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'null'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
