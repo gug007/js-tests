@@ -864,6 +864,23 @@ const list = [{
   tags: ['es5'],
   title: 'What will the following code output to the console?',
   code: `
+    var output = (function(x) {
+      delete x;
+      return x;
+    })(0);
+  
+    console.log(output);
+  `,
+  answers: [
+    {answer: '0', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'null'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
     var Person = {
       name: 'Jack'
     }
