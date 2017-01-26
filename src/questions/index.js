@@ -189,9 +189,9 @@ const list = [{
     console.log(a[b]);
   `,
   answers: [
-    {answer: 13, isTrue: true},
-    {answer: undefined},
-    {answer: 7},
+    {answer: '13', isTrue: true},
+    {answer: 'undefined'},
+    {answer: '7'},
     {answer: 'Error'}
   ]
 }, {
@@ -299,10 +299,10 @@ const list = [{
     person.printName();
   `,
   answers: [
-    {answer: undefined, isTrue: true},
+    {answer: 'undefined', isTrue: true},
     {answer: 'Error'},
     {answer: 'Mike'},
-    {answer: null}
+    {answer: 'null'}
   ]
 }, {
   tags: ['es5'],
@@ -319,9 +319,9 @@ const list = [{
   setTimeout(person.printAge, 1000);
   `,
   answers: [
-    {answer: undefined, isTrue: true},
-    {answer: 27},
-    {answer: null},
+    {answer: 'undefined', isTrue: true},
+    {answer: '27'},
+    {answer: 'null'},
     {answer: 'Error'}
   ]
 }, {
@@ -362,10 +362,10 @@ const list = [{
   title: 'How many data types are there in JS-ES5?',
   code: ``,
   answers: [
-    {answer: 6, isTrue: true},
-    {answer: 7},
-    {answer: 5},
-    {answer: 10},
+    {answer: '6', isTrue: true},
+    {answer: '7'},
+    {answer: '5'},
+    {answer: '10'}
   ]
 }, {
   tags: ['es6'],
@@ -386,9 +386,9 @@ const list = [{
   `,
   answers: [
     {answer: 'Error', isTrue: true},
-    {answer: 30},
-    {answer: 27},
-    {answer: undefined}
+    {answer: '30'},
+    {answer: '27'},
+    {answer: 'undefined'}
   ]
 }, {
   tags: ['es6'],
