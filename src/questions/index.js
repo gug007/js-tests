@@ -26,10 +26,10 @@ const list = [{
     console.log(typeof a, typeof b);
   `,
   answers: [
-    {answer: '"undefined", "number"', isTrue: true},
-    {answer: '"number", "number"'},
-    {answer: '"number", "undefined"'},
-    {answer: '"undefined", "undefined"'}
+    {answer: 'undefined, number', isTrue: true},
+    {answer: 'number, number'},
+    {answer: 'number, undefined'},
+    {answer: 'undefined, undefined'}
   ]
 }, {
   tags: ['es5'],
@@ -73,9 +73,9 @@ const list = [{
     console.log(foo1(), foo2());
   `,
   answers: [
-    {answer: 'Object {bar: "hello"}, undefined', isTrue: true},
-    {answer: 'Object {bar: "hello"}, Object {bar: "hello"}'},
-    {answer: 'undefined, Object {bar: "hello"}'},
+    {answer: '{bar: "hello"}, undefined', isTrue: true},
+    {answer: '{bar: "hello"}, {bar: "hello"}'},
+    {answer: 'undefined, {bar: "hello"}'},
     {answer: 'undefined, undefined'}
   ]
 }, {
@@ -137,10 +137,10 @@ const list = [{
     console.log(+'1' + '1' + '2');
   `,
   answers: [
-    {answer: '"122", "32", "02", "112"', isTrue: true},
+    {answer: '122, 32, 02, 112', isTrue: true},
     {answer: '5, 32, 2, 4'},
-    {answer: '"122", "122", "112", "112"'},
-    {answer: '"32", "32", "02", "112"'}
+    {answer: '122, 122, 112, 112'},
+    {answer: '32, 32, 02, 112'}
   ]
 }, {
   tags: ['es5'],
@@ -222,8 +222,8 @@ const list = [{
     console.log(b);
   `,
   answers: [
-    {answer: 'Object {a: 13}', isTrue: true},
-    {answer: 'Object {b: 7}'},
+    {answer: '{a: 13}', isTrue: true},
+    {answer: '{b: 7}'},
     {answer: 'undefined'},
     {answer: 'Error'}
   ]
@@ -242,10 +242,10 @@ const list = [{
     console.log(a, b);
   `,
   answers: [
-    {answer: '7, Object {a: 13}', isTrue: true},
-    {answer: '13, Object {a: 13}'},
-    {answer: '7, Object {a: 7}'},
-    {answer: '13, Object {a: 7}'}
+    {answer: '7, {a: 13}', isTrue: true},
+    {answer: '13, {a: 13}'},
+    {answer: '7, {a: 7}'},
+    {answer: '13, {a: 7}'}
   ]
 }, {
   tags: ['es5'],
@@ -278,10 +278,10 @@ const list = [{
     console.log(typeof undefined);
   `,
   answers: [
-    {answer: '"object", "object", "object", "undefined"', isTrue: true},
-    {answer: '"object", "object", "array", "undefined"'},
-    {answer: '"null", "object", "object", "undefined"'},
-    {answer: '"object", "object", "object", "string"'}
+    {answer: 'object, object, object, undefined', isTrue: true},
+    {answer: 'object, object, array, undefined'},
+    {answer: 'null, object, object, undefined'},
+    {answer: 'object, object, object, string'}
   ]
 }, {
   tags: ['es6'],
@@ -401,9 +401,9 @@ const list = [{
     let bar = 13;
   `,
   answers: [
-    {answer: '"undefined", Error', isTrue: true},
-    {answer: '"number", "number"'},
-    {answer: '"undefined", "undefined"'},
+    {answer: 'undefined, Error', isTrue: true},
+    {answer: 'number, number'},
+    {answer: 'undefined, undefined'},
     {answer: 'Error, Error'}
   ]
 }, {
@@ -442,10 +442,10 @@ const list = [{
     console.log(typeof window.Array);
   `,
   answers: [
-    {answer: '"function", "string", "function"', isTrue: true},
-    {answer: '"function", "function", "function"'},
-    {answer: '"string", "string", "string"'},
-    {answer: '"string", "function", "string"'}
+    {answer: 'function, string, function', isTrue: true},
+    {answer: 'function, function, function'},
+    {answer: 'string, string, string'},
+    {answer: 'string, function, string'}
   ]
 }, {
   tags: ['es6'],
