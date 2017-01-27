@@ -963,6 +963,18 @@ const list = [{
     {answer: '1function'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    console.log(0.1 + 0.2 == 0.3);
+  `,
+  answers: [
+    {answer: 'false', isTrue: true},
+    {answer: 'true'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
