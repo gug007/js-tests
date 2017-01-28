@@ -1010,7 +1010,7 @@ const list = [{
       console.log(arr === state.arr);
     }
 
-    var newArr = state.arr.concat([4]);
+    var newArr = state.arr.concat(4);
 
     isEqual(newArr);
   `,
