@@ -975,6 +975,51 @@ const list = [{
     {answer: 'undefined'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var state = {
+      arr: [1, 2, 3]
+    };
+
+    function isEqual(arr) {
+      console.log(arr === state.arr);
+    }
+
+    var newArr = state.arr;
+    newArr.push(4);
+
+    isEqual(newArr);
+  `,
+  answers: [
+    {answer: 'true', isTrue: true},
+    {answer: 'false'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    var state = {
+      arr: [1, 2, 3]
+    };
+
+    function isEqual(arr) {
+      console.log(arr === state.arr);
+    }
+
+    var newArr = state.arr.concat([4]);
+
+    isEqual(newArr);
+  `,
+  answers: [
+    {answer: 'false', isTrue: true},
+    {answer: 'true'},
+    {answer: 'undefined'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
