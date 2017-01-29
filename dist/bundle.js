@@ -1,3 +1,76 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /**
  @tags [es5, es6, typescript, ect.]
  */
@@ -978,4 +1051,139 @@ const list = [{
 }];
 
 //module.exports = list;
-export default list;
+/* harmony default export */ __webpack_exports__["a"] = list;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__questions__ = __webpack_require__(0);
+
+
+
+
+const root = document.getElementById('root');
+
+const elm = (type) => document.createElement(type);
+
+const attr = (elm, attr) => Object.assign(elm, attr);
+
+const body = (elm, body) => {
+  elm.innerHTML = body;
+  return elm;
+}
+
+const addChild = (target, child) => target.appendChild(child);
+
+function createQuestion(questions, index = 0, userAnswers = [], userAnswer = '') {
+  const div = attr(elm('div'), {id: 'container'});
+  
+  const preTitle = addChild(div, elm('pre'));
+  addChild(preTitle, body(attr(elm('h3'), {id: 'title'}), questions[index].title));
+
+  const pre = addChild(div, elm('pre'));
+  addChild(pre, body(elm('code'), questions[index].code));
+  
+  const section = addChild(div, elm('section'));
+
+  const button = body(attr(elm('button'), {disabled: true}), 'Next');
+
+  const randomAnswers = getRandomData(questions[index].answers, 4);
+  
+  randomAnswers.forEach((v, i) => {
+    const input = attr(elm('input'), {id: (v.isTrue) ? v.isTrue : v.answer, type: 'radio', name: 'answer', value: v.answer});
+    input.onchange = () => {
+      if(userAnswer) { userAnswers.length = userAnswers.length - 1; }
+      const correctAnswer = section.querySelector('#true').value;
+      userAnswer = section.querySelector('input[type="radio"]:checked').value;
+      userAnswers.push(userAnswer === correctAnswer ? true : false);
+      button.disabled = false;
+    };
+    const label = body(elm('label'), v.answer);
+    label.setAttribute('for', (v.isTrue) ? v.isTrue : v.answer);    
+    
+    addChild(section, input);
+    addChild(section, label);
+    addChild(section, elm('br'));
+  });
+
+  addChild(div, button);
+
+  button.onclick = () => {
+    root.removeChild(div);
+    if(index < questions.length - 1) {
+      createQuestion(questions, ++index, userAnswers);
+    } else {
+      showResult(userAnswers);
+    }
+  };
+
+  addChild(root, div);
+}
+
+function showResult(userAnswers) {
+  const numOfCorrAns = userAnswers.filter((v) => v === true).length;
+  const percentages = numOfCorrAns / userAnswers.length * 100;
+  const scaleFive = 5 * percentages / 100;
+  const result = `You have answered correctly ${numOfCorrAns} questions! (${percentages}%) or ${scaleFive} - 5:)`
+
+  const div = attr(elm('div'), {id: 'container'});
+  div.innerHTML = result;
+  
+  addChild(root, div);
+}
+
+function getRandomData(arr, num) {
+  const randomData = [];
+  const history = {};
+
+  while(randomData.length < num) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    if(history[randomIndex] === randomIndex) {
+      continue;
+    }
+
+    history[randomIndex] = randomIndex;
+    randomData.push(arr[randomIndex]);
+  }
+  
+  return randomData;
+}
+
+createQuestion(getRandomData(__WEBPACK_IMPORTED_MODULE_0__questions__["a" /* default */], 5));
+
+
+/*const elm = (type, props) => {
+  const element = document.createElement(type);
+  
+  if(Array.isArray(props.body)) {
+    props.body.forEach((e) => element.appendChild(e));
+  } else if(props.body instanceof HTMLElement) {
+    element.appendChild(props.body);
+  }
+  
+  delete props.body;
+  Object.assign(element, props);
+  return element;
+};
+
+const div = elm('div', {
+  body: [
+    elm('div', {
+      body: elm('label', {value: '123'})
+    }),
+    elm('input', {type: 'radio', name: 'answer'}),
+    elm('input', {type: 'radio', name: 'answer'}),
+    elm('input', {type: 'radio', name: 'answer'}),
+    elm('input', {type: 'radio', name: 'answer'})
+  ]
+});
+
+root.appendChild(div);
+*/
+
+/***/ })
+/******/ ]);
