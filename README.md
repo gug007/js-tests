@@ -539,3 +539,36 @@
 
     console.log(y);
    ``` 
+53) What will the following code output to the console?
+```javascript 
+    console.log(0.1 + 0.2 == 0.3);
+   ``` 
+54) What will the following code output to the console?
+```javascript 
+    var state = {
+      arr: [1, 2, 3]
+    };
+
+    function isEqual(arr) {
+      console.log(arr === state.arr);
+    }
+
+    var newArr = state.arr;
+    newArr.push(4);
+
+    isEqual(newArr);
+   ``` 
+55) What will the following code output to the console?
+```javascript 
+    var state = {
+      arr: [1, 2, 3]
+    };
+
+    function isEqual(arr) {
+      console.log(arr === state.arr);
+    }
+
+    var newArr = state.arr.concat(4);
+
+    isEqual(newArr);
+   ``` 
