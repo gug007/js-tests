@@ -2,36 +2,32 @@
 
 import questions from './questions';
 
-const root = document.getElementById('root');
-
-const elm = (type) => document.createElement(type);
-
-const attr = (elm, attr) => Object.assign(elm, attr);
-
-const body = (elm, body) => {
-  elm.innerHTML = body;
+function newElm(tag, props = {}, children = '') {
+  let elm = document.createElement(tag);
+  elm = Object.assign(elm, props);
+  elm.innerHTML = children;
   return elm;
 }
 
 const addChild = (target, child) => target.appendChild(child);
 
 function createQuestion(questions, index = 0, userAnswers = [], userAnswer = '') {
-  const div = attr(elm('div'), {id: 'container'});
+  const div = newElm('div', {id: 'container'});
   
-  const preTitle = addChild(div, elm('pre'));
-  addChild(preTitle, body(attr(elm('h3'), {id: 'title'}), questions[index].title));
+  const preTitle = addChild(div, newElm('pre'));
+  addChild(preTitle, newElm('h3', {id: 'title'}, questions[index].title));
 
-  const pre = addChild(div, elm('pre'));
-  addChild(pre, body(elm('code'), questions[index].code));
+  const pre = addChild(div, newElm('pre'));
+  addChild(pre, newElm('code', undefined, questions[index].code));
+
+  const section = addChild(div, newElm('section'));
+
+  const button = newElm('button', {disabled: true}, 'Next');
   
-  const section = addChild(div, elm('section'));
-
-  const button = body(attr(elm('button'), {disabled: true}), 'Next');
-
   const randomAnswers = getRandomArr(questions[index].answers, questions[index].answers.length);
   
   randomAnswers.forEach((v, i) => {
-    const input = attr(elm('input'), {id: (v.isTrue) ? v.isTrue : i, type: 'radio', name: 'answer', value: v.answer});
+    const input = newElm('input', {id: (v.isTrue) ? v.isTrue : i, type: 'radio', name: 'answer', value: v.answer});
     input.onchange = () => {
       if(userAnswer) { userAnswers.length = userAnswers.length - 1; }
       const correctAnswer = section.querySelector('#true').value;
@@ -39,12 +35,12 @@ function createQuestion(questions, index = 0, userAnswers = [], userAnswer = '')
       userAnswers.push(userAnswer === correctAnswer);
       button.disabled = false;
     };
-    const label = body(elm('label'), v.answer);
+    const label = newElm('label', undefined, v.answer);
     label.setAttribute('for', (v.isTrue) ? v.isTrue : i);    
     
     addChild(section, input);
     addChild(section, label);
-    addChild(section, elm('br'));
+    addChild(section, newElm('br'));
   });
 
   addChild(div, button);
@@ -68,9 +64,7 @@ function showResult(userAnswers) {
   const scaleFive = 5 * percentages / 100;
   const result = `You have answered correctly ${numOfCorrAns} questions! (${percentages}%) or ${scaleFive} - 5:)`
 
-  const div = attr(elm('div'), {id: 'container'});
-  div.innerHTML = result;
-  
+  const div = newElm('div', {id: 'container'}, result);
   addChild(root, div);
 }
 
