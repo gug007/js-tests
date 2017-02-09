@@ -1,0 +1,29 @@
+
+
+.number {
+  color: #FFFFFF;
+}
+
+.string {
+  color: #FF5722;
+}
+
+.object {
+  color: #00C853;
+}
+
+.props {
+  color: #80D8FF;
+}
+
+.funcs {
+  color: #EEFF41;
+}
+
+.keyWords {
+  color: #2196F3;
+}
+
+.conditionsLoops {
+  color: #D500F9;
+}

@@ -2,51 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-  <div id="root"></div>
-  <style>
-    html, body, #root {
-      height: 100%;
-    }
-
-    #root {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #container {
-      border: 1px solid red;
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #container #title {
-      border: 1px solid blue;
-    }
-
-    #container pre {
-      border: 1px solid black;
-    }
-
-    #container code {
-      /*border: 1px solid green;*/
-    }
-
-    #container section {
-      /*border: 1px solid black;*/
-    }
-
-    #container section label {
-      cursor: pointer;
-    }
-  </style>
-  <script type="text/javascript" src="dist/bundle.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="src/styles-for-code/CodeStyle.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="dist/bundle.js"></script>
+  </body>
 </html>

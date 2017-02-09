@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -747,7 +747,7 @@ const list = [{
   title: 'Consider the following code. Which function(s) is/are optimized?',
   code: `
     function factorial_1(n, p = 1) {
-      if (n <= 1) {
+      if(n <= 1) {
         return 1 * p;
       } else {
         return factorial_1(n - 1, n * p);
@@ -873,7 +873,7 @@ const list = [{
   tags: ['es6'],
   title: 'What will the following code output to the console?',
   code: `
-    console.log(typeof ${{Object}}.prototype);
+    console.log(typeof \`\${\Object\}\`.prototype);
   `,
   answers: [
     {answer: 'undefined', isTrue: true},
@@ -1059,126 +1059,218 @@ const list = [{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+
+
+const styleOfCode = {
+  'string': {pattern: /('.*?'|".*?")/g, span: `<span class="string">$1</span>`},
+  'object': {pattern: /((?!\d+)[a-z0-9\$\_]+(?=\.)(?!\d+))/gi, span: `<span class="object">$1</span>`},
+  'conditionsLoops': {pattern: /(if|else|switch|case|break|continue|return|forEach|for|\sof\s|while|do\s?\{)/g, span: `<span class="conditionsLoops">$1</span>`},
+  'funcs': {pattern: /((?!\d+)[a-z0-9\$\_]+(?=\(|\s\=\s\((?!function)))/gmi, span: `<span class="funcs">$1</span>`},
+  'props': {pattern: /([a-z0-9\$\_]+(?=\:))/gim, span: `<span class="props">$1</span>`}, 
+  'keyWords': {pattern: /(var|let|const|delete|typeof|arguments|new|null|undefined|function|true|false|this|class(?=\s\{|\s\w+\s\{))/g, span: `<span class="keyWords">$1</span>`},
+};
+
+function setStyleForCode(questions, styles = styleOfCode) {
+  const keys = Object.keys(styles);
+  return questions.map((question) => {
+    for(let prop of keys) {
+      if(question.code) {
+        question.code = question.code.replace(styles[prop].pattern, styles[prop].span);
+      } else {
+        break;
+      }
+    }
+    //console.log(question.code);
+    return question;
+  });
+}
+
+/* harmony default export */ __webpack_exports__["a"] = setStyleForCode;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__questions__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_for_code_codeStyle__ = __webpack_require__(1);
 
 
 
+
+
+const NUM_OF_QUESTIONS = 10;
+const TIMER = 60;
 
 function newElm(tag, props = {}, children = '') {
   let elm = document.createElement(tag);
-  elm = Object.assign(elm, props);
+  Object.assign(elm, props);
   elm.innerHTML = children;
   return elm;
 }
 
 const addChild = (target, child) => target.appendChild(child);
 
-function createQuestion(questions, index = 0, userAnswers = [], userAnswer = '') {
+function createQuestion(questions, timer = TIMER, index = 0, history = [], timeSum = 0) {
   const div = newElm('div', {id: 'container'});
   
-  const preTitle = addChild(div, newElm('pre'));
-  addChild(preTitle, newElm('h3', {id: 'title'}, questions[index].title));
+  addChild(div, newElm('h3', {id: 'title'}, questions[index].title));
 
-  const pre = addChild(div, newElm('pre'));
-  addChild(pre, newElm('code', undefined, questions[index].code));
-
+  const pre = newElm('pre', {}, questions[index].code);
+  pre.style = (questions[index].code.includes('span')) ? `background-color: #424242; color: #FFFFFF` : '';
+  addChild(div, pre);
+  
   const section = addChild(div, newElm('section'));
-
-  const button = newElm('button', {disabled: true}, 'Next');
+  
+  const button = newElm('button', {}, 'Next');
   
   const randomAnswers = getRandomArr(questions[index].answers, questions[index].answers.length);
-  
+
   randomAnswers.forEach((v, i) => {
-    const input = newElm('input', {id: (v.isTrue) ? v.isTrue : i, type: 'radio', name: 'answer', value: v.answer});
-    input.onchange = () => {
-      if(userAnswer) { userAnswers.length = userAnswers.length - 1; }
-      const correctAnswer = section.querySelector('#true').value;
-      userAnswer = section.querySelector('input:checked').value;
-      userAnswers.push(userAnswer === correctAnswer);
-      button.disabled = false;
-    };
+    const input = newElm('input', {id: (v.isTrue) ? v.isTrue : i, type: 'radio', name: 'answer', value: v.answer, checked: true});
     const label = newElm('label', undefined, v.answer);
-    label.setAttribute('for', (v.isTrue) ? v.isTrue : i);    
+    label.setAttribute('for', (v.isTrue) ? v.isTrue : i);
     
     addChild(section, input);
     addChild(section, label);
     addChild(section, newElm('br'));
   });
 
-  addChild(div, button);
+  const clock = newElm('div', {id: 'clock'}, '');
+
+  let timerId = 0;
 
   button.onclick = () => {
+    clearInterval(timerId);
+    timeSum += TIMER - timer;
+    history = history.concat([div]);    
+    root.removeChild(clock);
     root.removeChild(div);
     if(index < questions.length - 1) {
-      createQuestion(questions, ++index, userAnswers);
+      createQuestion(questions, timer = TIMER, ++index, history, timeSum);
     } else {
-      showResult(userAnswers);
+      timeSum += TIMER - timer;
+      showResult(history, timeSum);
     }
   };
-
+  
+  addChild(div, button);
+  addChild(root, clock);
   addChild(root, div);
+
+  clock.innerHTML = timer;
+  timerId = setInterval(() => {
+    --timer;
+    clock.innerHTML = timer;
+    if(timer <= 0) {
+      button.click();
+    }
+  }, 1000);
 }
 
-function showResult(userAnswers) {
-  console.log(userAnswers);
-  const numOfCorrAns = userAnswers.filter((v) => v === true).length;
-  const percentages = numOfCorrAns / userAnswers.length * 100;
-  const scaleFive = 5 * percentages / 100;
-  const result = `You have answered correctly ${numOfCorrAns} questions! (${percentages}%) or ${scaleFive} - 5:)`
+function showResult(history, timeSum) {
+  const results = newElm('div', {id: 'results'});
+  results.style = `z-index: -1`;
+  let numOfCorrAns = 0; 
+  
+  history.forEach((elm) => {
+    const section = elm.querySelector('section');
+    const correctAnswer = section.querySelector('#true');
+    const correctAnswerLabel = section.querySelector('label[for = "true"]');
+    
+    const userAnswer = section.querySelector('input:checked');
+    const userAnswerLabel = section.querySelector(`label[for = "${userAnswer.id}"]`);
 
-  const div = newElm('div', {id: 'container'}, result);
+    if(correctAnswer.value === userAnswer.value) {
+      ++numOfCorrAns;
+      userAnswerLabel.style = `background-color: green`;
+    } else {
+      correctAnswerLabel.style = `background-color: green`;
+      userAnswerLabel.style = `background-color: red`;
+    }
+    addChild(results, elm);
+  });
+
+  const percentages = numOfCorrAns / history.length * 100;
+  const scaleFive = 5 * percentages / 100;
+  const result = `
+    You\'ve spent ${timeSum} sec. or ${timeSpent(timeSum)} min.
+    You\'ve answered correctly ${numOfCorrAns} question(s) from ${history.length}! 
+    (${percentages.toFixed(2)}%) or ${scaleFive.toFixed(2)} - 5:)
+
+  `;
+  
+  const h3 = newElm('h3', {id: 'result'}, result);
+  const div = newElm('div', {id: 'container'}, '');
+  addChild(div, h3);
+
+  const showResults = newElm('button', {}, 'Show results');
+  showResults.onclick = () => {
+    if(showResults.innerHTML === 'Show results') {
+      addChild(root, results);
+      showResults.innerHTML = 'Hide results';
+    } else {
+      root.removeChild(results);
+      showResults.innerHTML = 'Show results';
+    }
+  }
+  
+  const fightAgain = newElm('button', {}, 'Fight again');
+  fightAgain.onclick = () => {
+    root.removeChild(div);
+    root.removeChild(fightAgain);
+    root.removeChild(showResults);
+    if(root.querySelector('#results')) {root.removeChild(results);}
+    setQuestions(NUM_OF_QUESTIONS);
+  }
+
   addChild(root, div);
+  addChild(root, fightAgain);
+  addChild(root, showResults);
+}
+
+function timeSpent(timeSum = NUM_OF_QUESTIONS * TIMER) {
+  const spent = ((timeSum / 60) + '').split('.');
+  return spent[0] + '.' + (spent[1] && spent[1].length > 1 && spent[1].slice(0, 2) || '00');
 }
 
 function getRandomArr(arr, num) {
   const randomData = [];
   const history = {};
-
   while(randomData.length < num) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     if(history[randomIndex] === randomIndex) {
       continue;
     }
-
     history[randomIndex] = randomIndex;
-    randomData.push(arr[randomIndex]);
+    randomData.push(Object.assign({}, arr[randomIndex]));
   }
-  
   return randomData;
 }
 
-createQuestion(getRandomArr(__WEBPACK_IMPORTED_MODULE_0__questions__["a" /* default */], 5));
+function setQuestions(numOfQuestions, setStyleForCode) { 
+  createQuestion(
+    setStyleForCode ? setStyleForCode(getRandomArr(__WEBPACK_IMPORTED_MODULE_0__questions__["a" /* default */], numOfQuestions)) 
+                    : getRandomArr(__WEBPACK_IMPORTED_MODULE_0__questions__["a" /* default */], numOfQuestions)
+  );
+}
 
-
-/*const elm = (type, props) => {
-  const element = document.createElement(type);
-  
-  if(Array.isArray(props.body)) {
-    props.body.forEach((e) => element.appendChild(e));
-  } else if(props.body instanceof HTMLElement) {
-    element.appendChild(props.body);
+function init() {
+  const info = newElm('h3', {}, `Total time of the test ${timeSpent()} min.`);
+  const start = newElm('button', {}, 'Start test');
+  start.onclick = () => {
+    root.removeChild(info);
+    root.removeChild(start);
+    setQuestions(NUM_OF_QUESTIONS, __WEBPACK_IMPORTED_MODULE_1__styles_for_code_codeStyle__["a" /* default */]);
   }
-  
-  delete props.body;
-  Object.assign(element, props);
-  return element;
-};
+  addChild(root, info);
+  addChild(root, start);
+}
 
-const div = elm('div', {
-  body: [
-    elm('div', {
-      body: elm('label', {value: '123'})
-    }),
-    elm('input', {type: 'radio', name: 'answer'}),
-    elm('input', {type: 'radio', name: 'answer'}),
-    elm('input', {type: 'radio', name: 'answer'}),
-    elm('input', {type: 'radio', name: 'answer'})
-  ]
-});
+window.onload = init;
 
-root.appendChild(div);
-*/
 
 /***/ })
 /******/ ]);
