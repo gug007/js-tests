@@ -401,16 +401,16 @@ const list = [{
   tags: ['es5'],
   title: 'What will the following code output to the console?',
   code: `
-    var arr = [77, 13, 33, 15, 7, 3];
+    var arr = ['77', '13', '33', '15', '7', '3'];
     arr.sort();
 
     console.log(arr);
   `,
   answers: [
-    {answer: '[13, 15, 3, 33, 7, 77]', isTrue: true},
+    {answer: '["13", "15", "3", "33", "7", "77"]', isTrue: true},
     {answer: '[3, 7, 13, 15, 33, 77]'},
     {answer: '[77, 33, 15, 13, 7, 3]'},
-    {answer: '[77, 13, 33, 15, 7, 3]'}
+    {answer: 'Error'}
   ]
 }, {
   tags: ['es5'],
@@ -929,7 +929,7 @@ const list = [{
   `,
   answers: [
     {answer: '["outer", "outer"]', isTrue: true},
-    {answer: '["inner", "outer"'},
+    {answer: '["inner", "outer"]'},
     {answer: '[undefined, "outer"]'},
     {answer: 'Error'}
   ]
@@ -1233,7 +1233,9 @@ function showResult(history, timeSum) {
 
 function timeSpent(timeSum = NUM_OF_QUESTIONS * TIMER) {
   const spent = ((timeSum / 60) + '').split('.');
-  return spent[0] + '.' + (spent[1] && spent[1].length > 1 && spent[1].slice(0, 2) || '00');
+  const minutes = spent[0];
+  let seconds = (spent[1] && (Number.parseFloat(('0.' + spent[1])) * 60).toFixed() || '0');
+  return minutes + '.' + ((seconds < 10) ? 0 + seconds : seconds);
 }
 
 function getRandomArr(arr, num) {

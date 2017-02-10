@@ -328,16 +328,16 @@ const list = [{
   tags: ['es5'],
   title: 'What will the following code output to the console?',
   code: `
-    var arr = [77, 13, 33, 15, 7, 3];
+    var arr = ['77', '13', '33', '15', '7', '3'];
     arr.sort();
 
     console.log(arr);
   `,
   answers: [
-    {answer: '[13, 15, 3, 33, 7, 77]', isTrue: true},
+    {answer: '["13", "15", "3", "33", "7", "77"]', isTrue: true},
     {answer: '[3, 7, 13, 15, 33, 77]'},
     {answer: '[77, 33, 15, 13, 7, 3]'},
-    {answer: '[77, 13, 33, 15, 7, 3]'}
+    {answer: 'Error'}
   ]
 }, {
   tags: ['es5'],
@@ -856,7 +856,7 @@ const list = [{
   `,
   answers: [
     {answer: '["outer", "outer"]', isTrue: true},
-    {answer: '["inner", "outer"'},
+    {answer: '["inner", "outer"]'},
     {answer: '[undefined, "outer"]'},
     {answer: 'Error'}
   ]
