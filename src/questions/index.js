@@ -1020,6 +1020,81 @@ const list = [{
     {answer: 'undefined'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const arr = Array(1, 2, 3)
+    arr.concat = () => 'Error'
+
+    delete arr.concat
+
+    console.log(arr.concat(5))
+  `,
+  answers: [
+    {answer: '[1, 2, 3, 5]', isTrue: true},
+    {answer: 'Error'},
+    {answer: 'undefined'},
+    {answer: '[1, 2, 3]'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    Array.__proto__.concat = () => 'Error';
+    const arr1 = Array(1, 2, 3);
+
+    console.log(arr1.concat(5));
+
+    Array.prototype.concat = () => 'Error';
+    const arr2 = Array(1, 2, 3);
+
+    console.log(arr2.concat(5));
+  `,
+  answers: [
+    {answer: '[1, 2, 3, 5], Error', isTrue: true},
+    {answer: 'Error, [1, 2, 3, 5]'},
+    {answer: '[1, 2, 3, 5], [1, 2, 3, 5]'},
+    {answer: '[1, 2, 3], [1, 2, 3, 5]'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const partial = (f, ...args) =>
+      (...moreArgs) => f(...args, ...moreArgs);
+
+    const add3 = (a, b, c) => a + b + c;
+
+    const plus = partial(add3, 2)
+
+    console.log(plus(2));
+  `,
+  answers: [
+    {answer: 'NaN', isTrue: true},
+    {answer: '4'},
+    {answer: '4undefined'},
+    {answer: 'Error'}
+  ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output to the console?',
+  code: `
+    const liftA2 = (f) => 
+      (a, b) => a.map(f).map((func) => func(b));
+
+      const func = a => b => a * b;
+
+      const liftedMult = liftA2(func);
+
+      console.log(liftedMult([1, 2], 3));
+  `,
+  answers: [
+    {answer: '[3, 6]', isTrue: true},
+    {answer: '[1, 2, 3]'},
+    {answer: '[4, 5]'},
+    {answer: '[3, 6, 3]'}
+  ]
 }];
 
 module.exports = list;
