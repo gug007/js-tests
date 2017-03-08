@@ -1,4 +1,5 @@
 #JavaScript Questions
+
 1) What value is returned from the following statement?
 ```javascript 
     function f() { return this }
