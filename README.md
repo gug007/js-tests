@@ -1,5 +1,4 @@
 #JavaScript Questions
-
 1) What value is returned from the following statement?
 ```javascript 
     function f() { return this }
@@ -572,4 +571,47 @@
     var newArr = state.arr.concat(4);
 
     isEqual(newArr);
+   ``` 
+56) What will the following code output to the console?
+```javascript 
+    const arr = Array(1, 2, 3)
+    arr.concat = () => 'Error'
+
+    delete arr.concat
+
+    console.log(arr.concat(5))
+   ``` 
+57) What will the following code output to the console?
+```javascript 
+    Array.__proto__.concat = () => 'Error';
+    const arr1 = Array(1, 2, 3);
+
+    console.log(arr1.concat(5));
+
+    Array.prototype.concat = () => 'Error';
+    const arr2 = Array(1, 2, 3);
+
+    console.log(arr2.concat(5));
+   ``` 
+58) What will the following code output to the console?
+```javascript 
+    const partial = (f, ...args) =>
+      (...moreArgs) => f(...args, ...moreArgs);
+
+    const add3 = (a, b, c) => a + b + c;
+
+    const plus = partial(add3, 2)
+
+    console.log(plus(2));
+   ``` 
+59) What will the following code output to the console?
+```javascript 
+    const liftA2 = (f) => 
+      (a, b) => a.map(f).map((func) => func(b));
+
+      const func = a => b => a * b;
+
+      const liftedMult = liftA2(func);
+
+      console.log(liftedMult([1, 2], 3));
    ``` 
