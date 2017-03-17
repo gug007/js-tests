@@ -1083,11 +1083,11 @@ const list = [{
     const liftA2 = (f) => 
       (a, b) => a.map(f).map((func) => func(b));
 
-      const func = a => b => a * b;
+    const func = a => b => a * b;
 
-      const liftedMult = liftA2(func);
+    const liftedMult = liftA2(func);
 
-      console.log(liftedMult([1, 2], 3));
+    console.log(liftedMult([1, 2], 3));
   `,
   answers: [
     {answer: '[3, 6]', isTrue: true},
