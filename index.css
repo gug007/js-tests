@@ -1,0 +1,49 @@
+
+
+html, body, #root {
+  /*height: 100%;*/
+}
+
+#root {
+  display: flex;
+  border: 1px solid red;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#clock {
+  border: 1px solid green;
+  min-width: 200px;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  border: 1px solid red;
+  max-width: 500px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#container #title {
+  border: 1px solid blue;
+}
+
+#container pre {
+  border: 1px solid black;
+  /*background-color: #424242;
+  color: #FFFFFF;*/
+}
+
+#container section {
+  border: 1px solid black;
+}
+
+#container section label {
+  cursor: pointer;
+}
