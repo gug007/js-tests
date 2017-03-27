@@ -1095,6 +1095,26 @@ const list = [{
     {answer: '[4, 5]'},
     {answer: '[3, 6, 3]'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output?',
+  code: `
+    var salary = "1000$";
+
+    (function () {
+      console.log("Original salary was " + salary);
+
+      var salary = "5000$";
+
+      console.log("My New Salary " + salary);
+   })();
+  `,
+  answers: [
+    {answer: 'undefined, 5000$', isTrue: true},
+    {answer: '1000$, 5000$'},
+    {answer: '1000$, undefined'},
+    {answer: 'undefined, undefined'}
+  ]
 }];
 
 module.exports = list;
