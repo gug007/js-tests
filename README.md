@@ -615,15 +615,3 @@
 
     console.log(liftedMult([1, 2], 3));
    ``` 
-60) What will the following code output?
-```javascript 
-    var salary = "1000$";
-
-    (function () {
-      console.log("Original salary was " + salary);
-
-      var salary = "5000$";
-
-      console.log("My New Salary " + salary);
-   })();
-   ``` 
