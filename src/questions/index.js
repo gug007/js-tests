@@ -800,7 +800,7 @@ const list = [{
   tags: ['es6'],
   title: 'What will the following code output to the console?',
   code: `
-    console.log(typeof \${{Object}}.prototype);
+    console.log(typeof \`\${{Object}}\`.prototype);
   `,
   answers: [
     {answer: 'undefined', isTrue: true},
