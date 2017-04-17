@@ -455,7 +455,7 @@
    ``` 
 43) What will the following code output to the console?
 ```javascript 
-    console.log(typeof `[object Object]`.prototype);
+    console.log(typeof `${{Object}}`.prototype);
    ``` 
 44) What will the following code return?
 ```javascript 
@@ -614,4 +614,16 @@
     const liftedMult = liftA2(func);
 
     console.log(liftedMult([1, 2], 3));
+   ``` 
+60) What will the following code output?
+```javascript 
+    var salary = "1000$";
+
+    (function () {
+      console.log("Original salary was " + salary);
+
+      var salary = "5000$";
+
+      console.log("My New Salary " + salary);
+   })();
    ``` 
