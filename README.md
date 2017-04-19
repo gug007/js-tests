@@ -242,25 +242,7 @@
     console.log(typeof window.Date);
     const Array = '77';
     console.log(typeof window.Array);
-   ``` 
-26) Consider the following code. What will be printed on the console?
-```javascript 
-    function mixArgs(first, second = "b") {
-      console.log(first === arguments[0]);
-      first = "c";
-      console.log(first === arguments[0]);
-    }
-
-    mixArgs("a");
-
-    function args(first) {
-      console.log(first === arguments[0]);
-      first = "c";
-      console.log(first === arguments[0]);
-    }
-
-    args("a");
-   ``` 
+   ```
 27) What will the following code output to the console?
 ```javascript 
     function add(first, second = first) {
@@ -616,7 +598,7 @@
     console.log(liftedMult([1, 2], 3));
    ``` 
 60) What will the following code output?
-```javascript 
+```javascript
     var salary = "1000$";
 
     (function () {
@@ -626,4 +608,4 @@
 
       console.log("My New Salary " + salary);
    })();
-   ``` 
+   ```
