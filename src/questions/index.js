@@ -1,5 +1,5 @@
 /**
- @tags [es5, es6, typescript, ect.]
+ @tags [es5, es6, ect.]
  */
 
 const list = [{
