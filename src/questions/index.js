@@ -1115,6 +1115,29 @@ const list = [{
     {answer: '1000$, undefined'},
     {answer: 'undefined, undefined'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output?',
+  code: `
+    const x = {
+      val: 2
+    };
+
+    const x1 = () => x.val += 1;
+
+    const x2 = () => x.val *= 2;
+
+    x1();
+    x2();
+
+    console.log(x.val);
+  `,
+  answers: [
+    {answer: '6', isTrue: true},
+    {answer: '5'},
+    {answer: '14'},
+    {answer: '4'}
+  ]
 }];
 
 module.exports = list;
