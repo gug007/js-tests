@@ -242,7 +242,25 @@
     console.log(typeof window.Date);
     const Array = '77';
     console.log(typeof window.Array);
-   ```
+   ``` 
+26) Consider the following code. What will be printed on the console?
+```javascript 
+    function mixArgs(first, second = "b") {
+      console.log(first === arguments[0]);
+      first = "c";
+      console.log(first === arguments[0]);
+    }
+
+    mixArgs("a");
+
+    function args(first) {
+      console.log(first === arguments[0]);
+      first = "c";
+      console.log(first === arguments[0]);
+    }
+
+    args("a");
+   ``` 
 27) What will the following code output to the console?
 ```javascript 
     function add(first, second = first) {
@@ -288,7 +306,16 @@
 
     person.printName();
     person.printAge();
-   ```
+   ``` 
+30) 
+    Which statement(s) is/are true?
+
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
@@ -589,7 +616,7 @@
     console.log(liftedMult([1, 2], 3));
    ``` 
 60) What will the following code output?
-```javascript
+```javascript 
     var salary = "1000$";
 
     (function () {
@@ -599,4 +626,19 @@
 
       console.log("My New Salary " + salary);
    })();
-   ```
+   ``` 
+61) What will the following code output?
+```javascript 
+    const x = {
+      val: 2
+    };
+
+    const x1 = () => x.val += 1;
+
+    const x2 = () => x.val *= 2;
+
+    x1();
+    x2();
+
+    console.log(x.val);
+   ``` 
