@@ -1026,7 +1026,6 @@ const list = [{
   code: `
     const arr = Array(1, 2, 3)
     arr.concat = () => 'Error'
-
     delete arr.concat
 
     console.log(arr.concat(5))
