@@ -592,18 +592,7 @@
     const arr2 = Array(1, 2, 3);
 
     console.log(arr2.concat(5));
-   ``` 
-58) What will the following code output to the console?
-```javascript 
-    const partial = (f, ...args) =>
-      (...moreArgs) => f(...args, ...moreArgs);
-
-    const add3 = (a, b, c) => a + b + c;
-
-    const plus = partial(add3, 2)
-
-    console.log(plus(2));
-   ``` 
+   ```
 59) What will the following code output to the console?
 ```javascript 
     const liftA2 = (f) => 
