@@ -364,24 +364,6 @@
       x = x / 2;
     }
    ``` 
-35) Consider the following code. Which function(s) is/are pure?
-```javascript 
-    var x = 7;
-
-    function add(y) {
-      return x + y;
-    }
-
-    var z = 3;
-
-    function multiply(x, y) {
-      return x * y;
-    }
-
-    function divide() {
-      x = x / 2;
-    }
-   ``` 
 36) Consider the following code. Which function(s) is/are optimized?
 ```javascript 
     function factorial_1(n, p = 1) {
