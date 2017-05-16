@@ -381,13 +381,7 @@
         return n * factorial_2(n - 1);
       }
     }
-   ``` 
-37) Consider the following code. Which function(s) is/are curried?
-```javascript 
-    const multiply = (x) => x * 2;
-    const add = (x) => (y) => x + y;
-    const divide = (x) => (y) => y * y;
-   ``` 
+   ```
 38) What will the following code output to the console?
 ```javascript 
     const person = {
