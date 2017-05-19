@@ -329,15 +329,7 @@
     }
 
     setTimeout(function() {console.log('Hello there!');}, 1000);
-   ``` 
-32) 
-    Which statement(s) is/are true?
-
-    1. Higher-order functions are usual functions.
-    2. Higher-order functions either take functions as parameters, return functions or both.
-    3. Higher-order functions either take objects as parameters, return objects or both.
-    4. Higher-order function is just an another term of usual function.
-  
+   ```
 33) 
     Which statement is true?
 
