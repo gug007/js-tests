@@ -561,17 +561,6 @@
 
     console.log(arr2.concat(5));
    ```
-59) What will the following code output to the console?
-```javascript 
-    const liftA2 = (f) => 
-      (a, b) => a.map(f).map((func) => func(b));
-
-    const func = a => b => a * b;
-
-    const liftedMult = liftA2(func);
-
-    console.log(liftedMult([1, 2], 3));
-   ``` 
 60) What will the following code output?
 ```javascript 
     var salary = "1000$";
