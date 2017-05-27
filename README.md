@@ -287,25 +287,7 @@
     }
 
     bar(7, 13, 33, 77);
-   ``` 
-29) What will the following code output to the console?
-```javascript 
-    const person = {
-      name: 'Mike',
-      age: 27,
-  
-      printName: function() {
-        console.log(this.name);
-      },
-  
-      printAge: () => {
-        console.log(this.age);
-      }
-    };
-
-    person.printName();
-    person.printAge();
-   ``` 
+   ```
 30) 
     Which statement(s) is/are true?
 
