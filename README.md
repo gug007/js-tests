@@ -542,7 +542,6 @@
 
     console.log(arr2.concat(5));
    ```
-
 61) What will the following code output?
 ```javascript 
     const x = {
