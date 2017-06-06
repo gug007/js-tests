@@ -288,7 +288,6 @@
 
     bar(7, 13, 33, 77);
    ```
-
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
