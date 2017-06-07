@@ -302,13 +302,7 @@
 
     setTimeout(function() {console.log('Hello there!');}, 1000);
    ```
-33) 
-    Which statement is true?
 
-    1. A curried function is a function that takes any number of parameters.
-    2. A curried function is a function that only takes a single parameter at a time.
-    3. A curried function is a function that does not take any parameters.
-    4. A curried function is a function that only takes two parameters at a time.
   
 34) Consider the following code. Which function(s) is/are pure?
 ```javascript 
