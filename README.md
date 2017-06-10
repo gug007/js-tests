@@ -302,7 +302,6 @@
 
     setTimeout(function() {console.log('Hello there!');}, 1000);
    ```
-
   
 34) Consider the following code. Which function(s) is/are pure?
 ```javascript 
