@@ -194,6 +194,7 @@
       });
     }
    ``` 
+21) How many data types are there in JS-ES5?
 22) What will the following code output to the console?
 ```javascript 
     const person = {
@@ -287,7 +288,34 @@
     }
 
     bar(7, 13, 33, 77);
-   ```
+   ``` 
+29) What will the following code output to the console?
+```javascript 
+    const person = {
+      name: 'Mike',
+      age: 27,
+  
+      printName: function() {
+        console.log(this.name);
+      },
+  
+      printAge: () => {
+        console.log(this.age);
+      }
+    };
+
+    person.printName();
+    person.printAge();
+   ``` 
+30) 
+    Which statement(s) is/are true?
+
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
@@ -301,8 +329,42 @@
     }
 
     setTimeout(function() {console.log('Hello there!');}, 1000);
-   ```
+   ``` 
+32) 
+    Which statement(s) is/are true?
+
+    1. Higher-order functions are usual functions.
+    2. Higher-order functions either take functions as parameters, return functions or both.
+    3. Higher-order functions either take objects as parameters, return objects or both.
+    4. Higher-order function is just an another term of usual function.
+  
+33) 
+    Which statement is true?
+
+    1. A curried function is a function that takes any number of parameters.
+    2. A curried function is a function that only takes a single parameter at a time.
+    3. A curried function is a function that does not take any parameters.
+    4. A curried function is a function that only takes two parameters at a time.
+  
 34) Consider the following code. Which function(s) is/are pure?
+```javascript 
+    var x = 7;
+
+    function add(y) {
+      return x + y;
+    }
+
+    var z = 3;
+
+    function multiply(x, y) {
+      return x * y;
+    }
+
+    function divide() {
+      x = x / 2;
+    }
+   ``` 
+35) Consider the following code. Which function(s) is/are pure?
 ```javascript 
     var x = 7;
 
@@ -337,7 +399,13 @@
         return n * factorial_2(n - 1);
       }
     }
-   ```
+   ``` 
+37) Consider the following code. Which function(s) is/are curried?
+```javascript 
+    const multiply = (x) => x * 2;
+    const add = (x) => (y) => x + y;
+    const divide = (x) => (y) => y * y;
+   ``` 
 38) What will the following code output to the console?
 ```javascript 
     const person = {
@@ -453,7 +521,14 @@
       var salary = "5000$";
       console.log(salary);
     })();
-   ```
+   ``` 
+51) 
+    Which statement(s) is/are true?
+
+    1. The closure has access to variables declared in their own scope.
+    2. The closure has access to variables declared in a parent function scope.
+    3. The closure has access to variables declared in the global namespace.
+  
 52) What will the following code output to the console?
 ```javascript 
     var y = 1;
@@ -501,7 +576,6 @@
 ```javascript 
     const arr = Array(1, 2, 3)
     arr.concat = () => 'Error'
-
     delete arr.concat
 
     console.log(arr.concat(5))
@@ -517,7 +591,41 @@
     const arr2 = Array(1, 2, 3);
 
     console.log(arr2.concat(5));
-   ```
+   ``` 
+58) What will the following code output to the console?
+```javascript 
+    const partial = (f, ...args) =>
+      (...moreArgs) => f(...args, ...moreArgs);
+
+    const add3 = (a, b, c) => a + b + c;
+
+    const plus = partial(add3, 2)
+
+    console.log(plus(2));
+   ``` 
+59) What will the following code output to the console?
+```javascript 
+    const liftA2 = (f) => 
+      (a, b) => a.map(f).map((func) => func(b));
+
+    const func = a => b => a * b;
+
+    const liftedMult = liftA2(func);
+
+    console.log(liftedMult([1, 2], 3));
+   ``` 
+60) What will the following code output?
+```javascript 
+    var salary = "1000$";
+
+    (function () {
+      console.log("Original salary was " + salary);
+
+      var salary = "5000$";
+
+      console.log("My New Salary " + salary);
+   })();
+   ``` 
 61) What will the following code output?
 ```javascript 
     const x = {
