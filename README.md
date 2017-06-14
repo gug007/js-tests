@@ -332,7 +332,6 @@
    ``` 
 32) 
     Which statement(s) is/are true?
-
     1. Higher-order functions are usual functions.
     2. Higher-order functions either take functions as parameters, return functions or both.
     3. Higher-order functions either take objects as parameters, return objects or both.
