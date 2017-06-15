@@ -339,7 +339,6 @@
   
 33) 
     Which statement is true?
-
     1. A curried function is a function that takes any number of parameters.
     2. A curried function is a function that only takes a single parameter at a time.
     3. A curried function is a function that does not take any parameters.
