@@ -343,7 +343,6 @@
     2. A curried function is a function that only takes a single parameter at a time.
     3. A curried function is a function that does not take any parameters.
     4. A curried function is a function that only takes two parameters at a time.
-  
 34) Consider the following code. Which function(s) is/are pure?
 ```javascript 
     var x = 7;
