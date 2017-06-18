@@ -1137,6 +1137,23 @@ const list = [{
     {answer: '14'},
     {answer: '4'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output?',
+  code: `
+    const output = ((x) => {
+      delete x;
+      return x;
+    })(7);
+
+    console.log(output);
+  `,
+  answers: [
+    {answer: '7', isTrue: true},
+    {answer: 'undefined'},
+    {answer: '0'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
