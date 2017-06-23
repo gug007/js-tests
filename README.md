@@ -336,7 +336,6 @@
     2. Higher-order functions either take functions as parameters, return functions or both.
     3. Higher-order functions either take objects as parameters, return objects or both.
     4. Higher-order function is just an another term of usual function.
-  
 33) 
     Which statement is true?
     1. A curried function is a function that takes any number of parameters.
