@@ -1154,6 +1154,19 @@ const list = [{
     {answer: '0'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output?',
+  code: `
+    var f = function g(){ return 23; };
+    typeof g();
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'number'},
+    {answer: 'undefined'},
+    {answer: 'function'}
+  ]
 }];
 
 module.exports = list;
