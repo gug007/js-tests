@@ -650,3 +650,14 @@
 
     console.log(output);
    ``` 
+63) What will the following code output?
+```javascript 
+    var f = function g(){ return 23; };
+    typeof g();
+   ``` 
+64) What will the following code output?
+```javascript 
+    (function(foo){
+      return typeof foo.bar;
+    })({ foo: { bar: 1 } });
+   ``` 
