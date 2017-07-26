@@ -305,16 +305,7 @@
 
     person.printName();
     person.printAge();
-   ``` 
-30) 
-    Which statement(s) is/are true?
-
-    1. Pure functions have side effects.
-    2. Pure functions are usual functions.
-    3. Pure functions will always produce the same output given the same inputs.
-    4. Pure functions have no side effects.
-    5. Pure functions will never produce the same output given the same inputs.
-  
+   ```
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
