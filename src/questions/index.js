@@ -1181,6 +1181,22 @@ const list = [{
     {answer: 'number'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output?',
+  code: `
+    var foo = {
+      bar: function(){ return this.baz; },
+      baz: 1
+    }
+    typeof (f = foo.bar)();
+  `,
+  answers: [
+    {answer: 'undefined', isTrue: true},
+    {answer: 'object'},
+    {answer: 'number'},
+    {answer: 'function'}
+  ]
 }];
 
 module.exports = list;
