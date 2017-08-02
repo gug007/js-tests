@@ -194,6 +194,7 @@
       });
     }
    ``` 
+21) How many data types are there in JS-ES5?
 22) What will the following code output to the console?
 ```javascript 
     const person = {
@@ -305,7 +306,16 @@
 
     person.printName();
     person.printAge();
-   ```
+   ``` 
+30) 
+    Which statement(s) is/are true?
+
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
@@ -650,4 +660,12 @@
     (function(foo){
       return typeof foo.bar;
     })({ foo: { bar: 1 } });
+   ``` 
+65) What will the following code output?
+```javascript 
+    var foo = {
+      bar: function(){ return this.baz; },
+      baz: 1
+    }
+    typeof (f = foo.bar)();
    ``` 
