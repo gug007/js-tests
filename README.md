@@ -669,3 +669,7 @@
     }
     typeof (f = foo.bar)();
    ``` 
+66) What will the following code output?
+```javascript 
+    [...[...'...']].length
+   ``` 
