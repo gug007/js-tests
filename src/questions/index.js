@@ -1209,6 +1209,20 @@ const list = [{
     {answer: '0'},
     {answer: '6'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output?',
+  code: `
+    (function f(f){
+      return typeof f();
+    })(function(){ return 1; });
+  `,
+  answers: [
+    {answer: 'number', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'function'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
