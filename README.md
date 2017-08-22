@@ -673,3 +673,9 @@
 ```javascript 
     [...[...'...']].length
    ``` 
+67) What will the following code output?
+```javascript 
+    (function f(f){
+      return typeof f();
+    })(function(){ return 1; });
+   ``` 
