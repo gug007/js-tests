@@ -1210,7 +1210,7 @@ const list = [{
     {answer: '6'}
   ]
 }, {
-  tags: ['es6'],
+  tags: ['es5'],
   title: 'What will the following code output?',
   code: `
     (function f(f){
