@@ -1123,7 +1123,6 @@ const list = [{
     };
 
     const x1 = () => x.val += 1;
-
     const x2 = () => x.val *= 2;
 
     x1();
