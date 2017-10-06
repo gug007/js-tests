@@ -1222,6 +1222,22 @@ const list = [{
     {answer: 'function'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output?',
+  code: `
+    (function(x) {
+      return (function(y) {
+        console.log(x);
+      })(2)
+    })(1);
+  `,
+  answers: [
+    {answer: '1', isTrue: true},
+    {answer: 'undefined'},
+    {answer: '2'},
+    {answer: 'Error'}
+  ]
 }];
 
 module.exports = list;
