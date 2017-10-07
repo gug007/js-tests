@@ -678,3 +678,11 @@
       return typeof f();
     })(function(){ return 1; });
    ``` 
+68) What will the following code output?
+```javascript 
+    (function(x) {
+      return (function(y) {
+        console.log(x);
+      })(2)
+    })(1);
+   ``` 
