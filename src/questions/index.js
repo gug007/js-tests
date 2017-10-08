@@ -1238,6 +1238,19 @@ const list = [{
     {answer: '2'},
     {answer: 'Error'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output?',
+  code: `
+    var foo = function bar(){ return 12; };
+    typeof bar();  
+  `,
+  answers: [
+    {answer: 'Error', isTrue: true},
+    {answer: 'undefined'},
+    {answer: 'function'},
+    {answer: 'object'}
+  ]
 }];
 
 module.exports = list;
