@@ -1243,7 +1243,7 @@ const list = [{
   title: 'What will the following code output?',
   code: `
     var foo = function bar(){ return 12; };
-    typeof bar();  
+    typeof bar();
   `,
   answers: [
     {answer: 'Error', isTrue: true},
