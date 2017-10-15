@@ -685,9 +685,4 @@
         console.log(x);
       })(2)
     })(1);
-   ``` 
-69) What will the following code output?
-```javascript 
-    var foo = function bar(){ return 12; };
-    typeof bar();  
-   ``` 
+   ```
