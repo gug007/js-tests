@@ -1251,6 +1251,20 @@ const list = [{
     {answer: 'function'},
     {answer: 'object'}
   ]
+}, {
+  tags: ['es5'],
+  title: 'What will the following code output?',
+  code: `
+    x = 1;
+      console.log('x = ' + x);
+      var x;
+  `,
+  answers: [
+    {answer: 'x = 1', isTrue: true},
+    {answer: 'error: x is undefined'},
+    {answer: 'x = undefined'},
+    {answer: 'x = null;'}
+  ]
 }];
 
 module.exports = list;
