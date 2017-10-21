@@ -691,3 +691,9 @@
     var foo = function bar(){ return 12; };
     typeof bar();
    ``` 
+70) What will the following code output?
+```javascript 
+    x = 1;
+      console.log('x = ' + x);
+      var x;
+   ``` 
