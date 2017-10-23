@@ -1256,8 +1256,8 @@ const list = [{
   title: 'What will the following code output?',
   code: `
     x = 1;
-      console.log('x = ' + x);
-      var x;
+    console.log('x = ' + x);
+    var x;
   `,
   answers: [
     {answer: 'x = 1', isTrue: true},
