@@ -1212,7 +1212,7 @@ const list = [{
   tags: ['es5'],
   title: 'What will the following code output?',
   code: `
-    (function f(f){
+    (function f(f) {
       return typeof f();
     })(function(){ return 1; });
   `,
