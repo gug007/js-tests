@@ -1170,7 +1170,7 @@ const list = [{
   tags: ['es5'],
   title: 'What will the following code output?',
   code: `
-    (function(foo){
+    (function(foo) {
       return typeof foo.bar;
     })({ foo: { bar: 1 } });
   `,
