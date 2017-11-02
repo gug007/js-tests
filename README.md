@@ -656,7 +656,7 @@
    ``` 
 64) What will the following code output?
 ```javascript 
-    (function(foo){
+    (function(foo) {
       return typeof foo.bar;
     })({ foo: { bar: 1 } });
    ``` 
@@ -674,7 +674,7 @@
    ``` 
 67) What will the following code output?
 ```javascript 
-    (function f(f){
+    (function f(f) {
       return typeof f();
     })(function(){ return 1; });
    ``` 
@@ -694,6 +694,6 @@
 70) What will the following code output?
 ```javascript 
     x = 1;
-      console.log('x = ' + x);
-      var x;
+    console.log('x = ' + x);
+    var x;
    ``` 
