@@ -1265,6 +1265,24 @@ const list = [{
     {answer: 'x = undefined'},
     {answer: 'x = null;'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output?',
+  code: `
+   let c = 4;
+
+   if (true) {
+     var c = 5;
+   }
+
+   console.log(c)
+  `,
+  answers: [
+    {answer: 'error', isTrue: true},
+    {answer: '4'},
+    {answer: '5'},
+    {answer: 'undefined'}
+  ]
 }];
 
 module.exports = list;
