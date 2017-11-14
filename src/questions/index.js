@@ -1269,13 +1269,13 @@ const list = [{
   tags: ['es6'],
   title: 'What will the following code output?',
   code: `
-   let c = 4;
+    let c = 4;
 
-   if (true) {
-     var c = 5;
-   }
+    if (true) {
+      var c = 5;
+    }
 
-   console.log(c)
+    console.log(c)
   `,
   answers: [
     {answer: 'error', isTrue: true},
