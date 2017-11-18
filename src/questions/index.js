@@ -1283,6 +1283,21 @@ const list = [{
     {answer: '5'},
     {answer: 'undefined'}
   ]
+}, {
+  tags: ['es6'],
+  title: 'What will the following code output?',
+  code: `
+let arr = [1, 2, 3];
+arr.a = 5;
+
+alert(arr.a);
+  `,
+  answers: [
+    {answer: '5', isTrue: true},
+    {answer: 'null'},
+    {answer: 'error'},
+    {answer: 'undefined'}
+  ]
 }];
 
 module.exports = list;
