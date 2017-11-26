@@ -1287,10 +1287,10 @@ const list = [{
   tags: ['es6'],
   title: 'What will the following code output?',
   code: `
-let arr = [1, 2, 3];
-arr.a = 5;
+  let arr = [1, 2, 3];
+  arr.a = 5;
 
-alert(arr.a);
+  alert(arr.a);
   `,
   answers: [
     {answer: '5', isTrue: true},
