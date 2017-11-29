@@ -521,7 +521,14 @@
       var salary = "5000$";
       console.log(salary);
     })();
-   ```
+   ``` 
+51) 
+    Which statement(s) is/are true?
+
+    1. The closure has access to variables declared in their own scope.
+    2. The closure has access to variables declared in a parent function scope.
+    3. The closure has access to variables declared in the global namespace.
+  
 52) What will the following code output to the console?
 ```javascript 
     var y = 1;
@@ -689,4 +696,21 @@
     x = 1;
     console.log('x = ' + x);
     var x;
+   ``` 
+71) What will the following code output?
+```javascript 
+    let c = 4;
+
+    if (true) {
+      var c = 5;
+    }
+
+    console.log(c)
+   ``` 
+72) What will the following code output?
+```javascript 
+  let arr = [1, 2, 3];
+  arr.a = 5;
+
+  alert(arr.a);
    ``` 
