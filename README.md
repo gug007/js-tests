@@ -194,7 +194,6 @@
       });
     }
    ``` 
-21) How many data types are there in JS-ES5?
 22) What will the following code output to the console?
 ```javascript 
     const person = {
