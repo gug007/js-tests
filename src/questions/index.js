@@ -1290,7 +1290,7 @@ const list = [{
     let arr = [1, 2, 3];
     arr.a = 5;
 
-    alert(arr.a);
+    console.log(arr.a);
   `,
   answers: [
     {answer: '5', isTrue: true},
