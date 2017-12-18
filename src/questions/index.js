@@ -769,7 +769,6 @@ const list = [{
   title: 'What will the following code output to the console?',
   code: `
     const person = (name) => {name: name}
-
     const p = person('Mike');
     console.log(p.name);
   `,
