@@ -770,6 +770,7 @@ const list = [{
   code: `
     const person = (name) => {name: name}
     const p = person('Mike');
+
     console.log(p.name);
   `,
   answers: [
