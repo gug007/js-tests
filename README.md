@@ -43,13 +43,6 @@
     
     console.log(foo1(), foo2());
    ``` 
-5) What will the code below output to the console?
-```javascript 
-    console.log(typeof NaN === 'number');
-    console.log(NaN === NaN);
-    console.log('abc' / 3);
-    console.log('A' - 'B' + '2');
-   ``` 
 6) In what order will the numbers 1-4 be logged to the console when the code below is executed?
 ```javascript 
     (function() {
@@ -306,15 +299,7 @@
     person.printName();
     person.printAge();
    ``` 
-30) 
-    Which statement(s) is/are true?
 
-    1. Pure functions have side effects.
-    2. Pure functions are usual functions.
-    3. Pure functions will always produce the same output given the same inputs.
-    4. Pure functions have no side effects.
-    5. Pure functions will never produce the same output given the same inputs.
-  
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
