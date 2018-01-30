@@ -1052,9 +1052,9 @@ const list = [{
   `,
   answers: [
     {answer: '[1, 2, 3, 5], Error', isTrue: true},
-    {answer: 'Error, [1, 2, 3, 5]'},
     {answer: '[1, 2, 3, 5], [1, 2, 3, 5]'},
-    {answer: '[1, 2, 3], [1, 2, 3, 5]'}
+    {answer: '[1, 2, 3], [1, 2, 3, 5]'},
+    {answer: 'Error, [1, 2, 3, 5]'}
   ]
 }, {
   tags: ['es6'],
