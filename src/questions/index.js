@@ -540,8 +540,8 @@ const list = [{
   answers: [
     {answer: 'Mike, undefined', isTrue: true},
     {answer: 'Mike, 27'},
-    {answer: 'undefined, undefined'},
-    {answer: 'Mike, Error'}
+    {answer: 'Mike, Error'},
+    {answer: 'undefined, undefined'}
   ]
 }, {
   tags: ['es5'],
