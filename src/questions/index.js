@@ -513,8 +513,8 @@ const list = [{
   `,
   answers: [
     {answer: 'Error', isTrue: true},
-    {answer: '7, 3, 7, 3, undefined'},
     {answer: '7, 3, 7, 2, 77'},
+    {answer: '7, 3, 7, 3, undefined'},
     {answer: '7, 3, Error'}
   ]
 }, {
