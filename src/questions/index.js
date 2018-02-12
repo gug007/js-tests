@@ -272,9 +272,9 @@ const list = [{
   tags: ['es5'],
   title: 'What will the following code output to the console?',
   code: `
-    console.log(typeof null);
     console.log(typeof {});
     console.log(typeof []);
+    console.log(typeof null);
     console.log(typeof undefined);
   `,
   answers: [
