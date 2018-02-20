@@ -43,6 +43,13 @@
     
     console.log(foo1(), foo2());
    ``` 
+5) What will the code below output to the console?
+```javascript 
+    console.log(typeof NaN === 'number');
+    console.log(NaN === NaN);
+    console.log('abc' / 3);
+    console.log('A' - 'B' + '2');
+   ``` 
 6) In what order will the numbers 1-4 be logged to the console when the code below is executed?
 ```javascript 
     (function() {
@@ -140,9 +147,9 @@
    ``` 
 16) What will the following code output to the console?
 ```javascript 
-    console.log(typeof null);
     console.log(typeof {});
     console.log(typeof []);
+    console.log(typeof null);
     console.log(typeof undefined);
    ``` 
 17) What will the following code output to the console?
@@ -187,6 +194,7 @@
       });
     }
    ``` 
+21) How many data types are there in JS-ES5?
 22) What will the following code output to the console?
 ```javascript 
     const person = {
@@ -299,7 +307,15 @@
     person.printName();
     person.printAge();
    ``` 
+30) 
+    Which statement(s) is/are true?
 
+    1. Pure functions have side effects.
+    2. Pure functions are usual functions.
+    3. Pure functions will always produce the same output given the same inputs.
+    4. Pure functions have no side effects.
+    5. Pure functions will never produce the same output given the same inputs.
+  
 31) Consider the following code. Which function(s) is/are higher-order?
 ```javascript 
     function add(x, y) {
@@ -314,6 +330,22 @@
 
     setTimeout(function() {console.log('Hello there!');}, 1000);
    ``` 
+32) 
+    Which statement(s) is/are true?
+
+    1. Higher-order functions are usual functions.
+    2. Higher-order functions either take functions as parameters, return functions or both.
+    3. Higher-order functions either take objects as parameters, return objects or both.
+    4. Higher-order function is just an another term of usual function.
+  
+33) 
+    Which statement is true?
+
+    1. A curried function is a function that takes any number of parameters.
+    2. A curried function is a function that only takes a single parameter at a time.
+    3. A curried function is a function that does not take any parameters.
+    4. A curried function is a function that only takes two parameters at a time.
+  
 34) Consider the following code. Which function(s) is/are pure?
 ```javascript 
     var x = 7;
@@ -408,8 +440,8 @@
 41) What will the following code output to the console?
 ```javascript 
     const person = (name) => {name: name}
-
     const p = person('Mike');
+
     console.log(p.name);
    ``` 
 42) What will the following code output to the console?
@@ -490,6 +522,13 @@
       console.log(salary);
     })();
    ``` 
+51) 
+    Which statement(s) is/are true?
+
+    1. The closure has access to variables declared in their own scope.
+    2. The closure has access to variables declared in a parent function scope.
+    3. The closure has access to variables declared in the global namespace.
+  
 52) What will the following code output to the console?
 ```javascript 
     var y = 1;
@@ -581,9 +620,7 @@
 
     (function () {
       console.log("Original salary was " + salary);
-
       var salary = "5000$";
-
       console.log("My New Salary " + salary);
    })();
    ``` 
@@ -627,6 +664,7 @@
       bar: function(){ return this.baz; },
       baz: 1
     }
+
     typeof (f = foo.bar)();
    ``` 
 66) What will the following code output?
@@ -670,8 +708,8 @@
    ``` 
 72) What will the following code output?
 ```javascript 
-  let arr = [1, 2, 3];
-  arr.a = 5;
+    let arr = [1, 2, 3];
+    arr.a = 5;
 
-  alert(arr.a);
+    console.log(arr.a);
    ``` 
