@@ -123,8 +123,8 @@ const list = [{
   `,
   answers: [
     {answer: '[["j","o","n","e","s"]], [["j","o","n","e","s"]]', isTrue: true},
-    {answer: '["s"], ["s"]'},
     {answer: '["j"], [["j","o","n","e","s"]]'},
+    {answer: '["s"], ["s"]'},
     {answer: '["j"], ["s"]'}
   ]
 }, {
